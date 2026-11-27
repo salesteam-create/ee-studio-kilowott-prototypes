@@ -1,70 +1,35 @@
 <a class="skip" href="#main">Hopp til innhold</a>
-<div class="curtain" aria-hidden="true"><span class="curtain__mark logo-mark"></span></div>
-<div class="cursor" aria-hidden="true"><span class="cursor__label"></span></div>
+<div class="veil" aria-hidden="true"></div>
+<div class="cursor" aria-hidden="true"><span></span></div>
 
-<header class="site-header" data-header>
-  <div class="site-header__inner">
-    <a class="site-header__logo" href="index.html" aria-label="EE Studio, til forsiden">
-      <span class="logo-mark" aria-hidden="true"></span>
-    </a>
-
-    <nav class="nav" aria-label="Hovedmeny">
-      <ul class="nav__list">
-        <li class="nav__item has-sub" data-nav="arbeid">
-          <a class="nav__link" href="arbeid.html">Arbeid</a>
-          <div class="nav__sub">
-            <a href="arbeid.html?spor=design"><span>Design</span><small>Identitet, trykk, utstilling</small></a>
-            <a href="arbeid.html?spor=foto"><span>Foto</span><small>Bedrift, portrett, event</small></a>
-            <a href="arbeid.html"><span>Alt arbeid</span><small>Hele porteføljen</small></a>
-          </div>
-        </li>
-        <li class="nav__item has-sub" data-nav="tjenester">
-          <a class="nav__link" href="design.html">Tjenester</a>
-          <div class="nav__sub">
-            <a href="design.html"><span>Design</span><small>Visuell kommunikasjon</small></a>
-            <a href="foto.html"><span>Foto</span><small>Bilder som forteller</small></a>
-          </div>
-        </li>
-        <li class="nav__item has-sub" data-nav="om">
-          <a class="nav__link" href="om-meg.html">Om meg</a>
-          <div class="nav__sub">
-            <a href="om-meg.html?spor=design"><span>Som designer</span><small>Strategi og identitet</small></a>
-            <a href="om-meg.html?spor=foto"><span>Som fotograf</span><small>Historieforteller</small></a>
-          </div>
-        </li>
-        <li class="nav__item" data-nav="blogg"><a class="nav__link" href="blogg.html">Blogg</a></li>
-        <li class="nav__item" data-nav="priser"><a class="nav__link" href="priser.html">Priser</a></li>
-      </ul>
-    </nav>
-
-    <div class="site-header__end">
-      <div class="world-switch" role="group" aria-label="Velg spor">
-        <button type="button" class="world-switch__btn" data-world-set="design">Design</button>
-        <button type="button" class="world-switch__btn" data-world-set="foto">Foto</button>
-        <span class="world-switch__pill" aria-hidden="true"></span>
+<header class="hdr" data-hdr>
+  <div class="hdr__in">
+    <a class="hdr__logo" href="index.html" aria-label="EE Studio, forsiden"><span class="mark" aria-hidden="true"></span></a>
+    <nav class="hdr__nav" aria-label="Hovedmeny">
+      <div class="hdr__item" data-nav="arbeid"><a class="link" href="arbeid.html">Arbeid</a></div>
+      <div class="hdr__item" data-nav="tjenester"><a class="link" href="design.html">Tjenester</a>
+        <div class="hdr__sub"><a class="link" href="design.html">Design</a><a class="link" href="foto.html">Foto</a></div>
       </div>
-      <a class="btn btn--coral btn--sm" href="kontakt.html" data-nav="kontakt">Ta kontakt</a>
-      <button class="burger" type="button" aria-expanded="false" aria-controls="menu" aria-label="Åpne meny">
-        <span></span><span></span>
-      </button>
+      <div class="hdr__item" data-nav="om"><a class="link" href="om-meg.html">Om meg</a></div>
+      <div class="hdr__item" data-nav="blogg"><a class="link" href="blogg.html">Blogg</a></div>
+      <div class="hdr__item" data-nav="priser"><a class="link" href="priser.html">Priser</a></div>
+    </nav>
+    <div class="hdr__end">
+      <a class="hdr__cta link" href="kontakt.html"><span class="dot" aria-hidden="true"></span>Ta kontakt</a>
+      <button class="burger" type="button" aria-expanded="false" aria-controls="menu">Meny</button>
     </div>
   </div>
 </header>
 
 <div class="menu" id="menu" aria-hidden="true">
-  <div class="menu__inner">
-    <div class="menu__group">
-      <p class="label">Tjenester</p>
-      <a class="menu__big" href="design.html">Design</a>
-      <a class="menu__big" href="foto.html">Foto</a>
-    </div>
-    <div class="menu__group">
-      <p class="label">Utforsk</p>
-      <a class="menu__link" href="arbeid.html">Arbeid</a>
-      <a class="menu__link" href="om-meg.html">Om meg</a>
-      <a class="menu__link" href="blogg.html">Blogg</a>
-      <a class="menu__link" href="priser.html">Priser</a>
-    </div>
-    <a class="btn btn--coral" href="kontakt.html">Ta kontakt <span class="btn__arrow" aria-hidden="true"></span></a>
-  </div>
+  <nav aria-label="Meny">
+    <a class="menu__big" href="design.html">Design</a>
+    <a class="menu__big" href="foto.html">Foto</a>
+    <a class="menu__big" href="arbeid.html">Arbeid</a>
+    <a class="menu__big" href="om-meg.html">Om meg</a>
+    <a class="menu__big" href="priser.html">Priser</a>
+    <a class="menu__big" href="blogg.html">Blogg</a>
+    <a class="menu__big" href="kontakt.html">Ta kontakt</a>
+  </nav>
+  <div class="menu__foot"><span>Sandnes og Stavanger</span><a href="mailto:elisabet@eestudio.no">elisabet@eestudio.no</a></div>
 </div>

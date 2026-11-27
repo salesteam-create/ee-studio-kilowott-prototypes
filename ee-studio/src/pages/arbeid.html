@@ -1,24 +1,21 @@
-<!-- key: arbeid | title: Arbeid | desc: Utvalgte prosjekter innen grafisk design, visuell identitet og fotografi. -->
+<!-- key: arbeid | title: Arbeid | desc: Utvalgte prosjekter innen grafisk design og fotografi. -->
 
-<section class="phero">
-  <div class="container">
-    <div class="phero__grid">
-      <h1 class="display" data-split>Arbeid, <em class="script">historier</em> fortalt</h1>
-      <p class="body phero__aside" data-reveal>Et utvalg prosjekter innen design og foto. Velg spor, eller se alt samlet.</p>
-    </div>
+<header class="wrap phead">
+  <div class="phead__grid">
+    <h1 class="t-xl" data-split>Arbeid</h1>
+    <p class="prose" data-reveal>Et utvalg prosjekter fra begge spor. Hold over et navn for å se mer.</p>
   </div>
-</section>
+</header>
 
-<section class="container" data-filter style="padding-bottom:var(--sp-6)">
-  <div class="filterbar">
-    <div class="seg" role="group" aria-label="Velg spor" style="--n:3">
-      <span class="seg__pill" aria-hidden="true"></span>
-      <button class="seg__btn" type="button" data-world-filter="">Alle</button>
-      <button class="seg__btn" type="button" data-world-filter="design">Design</button>
-      <button class="seg__btn" type="button" data-world-filter="foto">Foto</button>
+<section class="wrap" style="padding-bottom:var(--s-5)">
+  <div class="toolbar">
+    <div class="filter" data-filter="#work" data-key="world">
+      <button type="button" data-v="" aria-pressed="true">Alle</button>
+      <button type="button" data-v="design" aria-pressed="false">Design</button>
+      <button type="button" data-v="foto" aria-pressed="false">Foto</button>
     </div>
-    <div class="tabs" data-filter-cats role="group" aria-label="Kategori"></div>
-    <span class="filterbar__count" data-filter-count aria-live="polite"></span>
+    <span class="small muted" data-count></span>
   </div>
-  <div class="pgrid" data-projects="grid"></div>
+  <div class="index__list" id="work" data-index></div>
 </section>
+<div class="preview" aria-hidden="true"><img alt=""></div>

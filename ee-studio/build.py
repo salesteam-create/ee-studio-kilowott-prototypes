@@ -22,12 +22,12 @@ HEAD = """<!doctype html>
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>{title}</title>
 <meta name="description" content="{desc}">
-<meta name="theme-color" content="#FCFAF6">
+<meta name="theme-color" content="{color}">
 <link rel="icon" href="assets/img/eemark.png" type="image/png">
 <link rel="preload" href="assets/fonts/anton.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/css/main.css">
 </head>
-<body data-page="{key}" data-world="{world}" data-world-lock="{lock}" class="is-loading">
+<body data-page="{key}" data-theme="{theme}" class="is-loading">
 """
 
 for page in sorted((SRC / "pages").glob("*.html")):
@@ -38,13 +38,13 @@ for page in sorted((SRC / "pages").glob("*.html")):
         k, v = part.split(":", 1)
         meta[k.strip()] = v.strip()
     body = raw[m.end():]
-    world = meta.get("world", "")
-    lock = "true" if world else "false"
+    theme = meta.get("theme", "light")
+    color = "#171112" if theme == "dark" else "#FAF8F5"
     title = meta.get("title", "EE Studio")
     title = "EE Studio" if title == "EE Studio" else f"{title} | EE Studio"
     hdr = header.replace(f'data-nav="{meta["key"]}"', f'data-nav="{meta["key"]}" aria-current="page"')
     html = (
-        HEAD.format(title=title, desc=meta.get("desc", ""), key=meta["key"], world=world, lock=lock)
+        HEAD.format(title=title, desc=meta.get("desc", ""), key=meta["key"], theme=theme, color=color)
         + hdr
         + '\n<main id="main">\n'
         + body.strip()
