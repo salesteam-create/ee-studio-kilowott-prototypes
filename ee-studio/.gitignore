@@ -1,0 +1,6 @@
+# Repo is public: keep licensed fonts and client photos out of git.
+# Copy them in locally (see README) to run the prototype.
+assets/fonts/acumin-*.woff2
+assets/fonts/romance.woff2
+assets/img/*
+!assets/img/.gitkeep

@@ -1,0 +1,187 @@
+<!doctype html>
+<html lang="nb">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Prosjekt | EE Studio</title>
+<meta name="description" content="Prosjekt fra EE Studio.">
+<meta name="theme-color" content="#FCFAF6">
+<link rel="icon" href="assets/img/eemark.png" type="image/png">
+<link rel="preload" href="assets/fonts/anton.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/acumin-light.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/romance.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body data-page="arbeid" data-world="" data-world-lock="false" class="is-loading">
+<a class="skip" href="#main">Hopp til innhold</a>
+<div class="curtain" aria-hidden="true"><span class="curtain__mark logo-mark"></span></div>
+<div class="cursor" aria-hidden="true"><span class="cursor__label"></span></div>
+
+<header class="site-header" data-header>
+  <div class="site-header__inner">
+    <a class="site-header__logo" href="index.html" aria-label="EE Studio, til forsiden">
+      <span class="logo-mark" aria-hidden="true"></span>
+    </a>
+
+    <nav class="nav" aria-label="Hovedmeny">
+      <ul class="nav__list">
+        <li class="nav__item has-sub" data-nav="arbeid" aria-current="page">
+          <a class="nav__link" href="arbeid.html">Arbeid</a>
+          <div class="nav__sub">
+            <a href="arbeid.html?spor=design"><span>Design</span><small>Identitet, trykk, utstilling</small></a>
+            <a href="arbeid.html?spor=foto"><span>Foto</span><small>Bedrift, portrett, event</small></a>
+            <a href="arbeid.html"><span>Alt arbeid</span><small>Hele porteføljen</small></a>
+          </div>
+        </li>
+        <li class="nav__item has-sub" data-nav="tjenester">
+          <a class="nav__link" href="design.html">Tjenester</a>
+          <div class="nav__sub">
+            <a href="design.html"><span>Design</span><small>Visuell kommunikasjon</small></a>
+            <a href="foto.html"><span>Foto</span><small>Bilder som forteller</small></a>
+          </div>
+        </li>
+        <li class="nav__item has-sub" data-nav="om">
+          <a class="nav__link" href="om-meg.html">Om meg</a>
+          <div class="nav__sub">
+            <a href="om-meg.html?spor=design"><span>Som designer</span><small>Strategi og identitet</small></a>
+            <a href="om-meg.html?spor=foto"><span>Som fotograf</span><small>Historieforteller</small></a>
+          </div>
+        </li>
+        <li class="nav__item" data-nav="blogg"><a class="nav__link" href="blogg.html">Blogg</a></li>
+        <li class="nav__item" data-nav="priser"><a class="nav__link" href="priser.html">Priser</a></li>
+      </ul>
+    </nav>
+
+    <div class="site-header__end">
+      <div class="world-switch" role="group" aria-label="Velg spor">
+        <button type="button" class="world-switch__btn" data-world-set="design">Design</button>
+        <button type="button" class="world-switch__btn" data-world-set="foto">Foto</button>
+        <span class="world-switch__pill" aria-hidden="true"></span>
+      </div>
+      <a class="btn btn--coral btn--sm" href="kontakt.html" data-nav="kontakt">Ta kontakt</a>
+      <button class="burger" type="button" aria-expanded="false" aria-controls="menu" aria-label="Åpne meny">
+        <span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="menu" id="menu" aria-hidden="true">
+  <div class="menu__inner">
+    <div class="menu__group">
+      <p class="label">Tjenester</p>
+      <a class="menu__big" href="design.html">Design</a>
+      <a class="menu__big" href="foto.html">Foto</a>
+    </div>
+    <div class="menu__group">
+      <p class="label">Utforsk</p>
+      <a class="menu__link" href="arbeid.html">Arbeid</a>
+      <a class="menu__link" href="om-meg.html">Om meg</a>
+      <a class="menu__link" href="blogg.html">Blogg</a>
+      <a class="menu__link" href="priser.html">Priser</a>
+    </div>
+    <a class="btn btn--coral" href="kontakt.html">Ta kontakt <span class="btn__arrow" aria-hidden="true"></span></a>
+  </div>
+</div>
+
+<main id="main">
+<article data-project-detail>
+  <header class="pd-hero">
+    <div class="container">
+      <div class="crumbs"><a class="label" href="arbeid.html">Arbeid</a><i class="dia"></i><span class="label" data-pd="back"></span></div>
+      <div class="phero__grid">
+        <h1 class="display" data-pd="title">Prosjekt</h1>
+        <p class="lead phero__aside" data-pd="lead"></p>
+      </div>
+      <dl class="pd-meta">
+        <div><dt>Kunde</dt><dd data-pd="client"></dd></div>
+        <div><dt>År</dt><dd data-pd="year"></dd></div>
+        <div><dt>Tjenester</dt><dd data-pd="services"></dd></div>
+        <div><dt>Spor</dt><dd data-pd="spor"></dd></div>
+      </dl>
+    </div>
+  </header>
+
+  <div class="expand">
+    <div class="expand__frame" data-expand data-pd="cover"></div>
+  </div>
+
+  <section class="section">
+    <div class="container two-col">
+      <div>
+        <p class="label"><i class="dia"></i> Om prosjektet</p>
+        <p class="lead mt-3" data-pd="intro" data-reveal></p>
+        <div class="tags mt-3" data-pd="tags"></div>
+      </div>
+      <div class="stack" data-stagger>
+        <div data-reveal><h2 class="h4">Utfordringen</h2><p class="body mt-1" data-pd="challenge"></p></div>
+        <div data-reveal><h2 class="h4">Løsningen</h2><p class="body mt-1" data-pd="solution"></p></div>
+      </div>
+    </div>
+  </section>
+
+  <section class="container" style="padding-bottom:var(--sp-6)">
+    <div class="pd-gallery" data-pd="gallery"></div>
+  </section>
+
+  <a class="pd-next" data-pd="next" href="arbeid.html" data-header-theme="dark" data-cursor="Neste">
+    <span class="pd-next__img" data-pd="next-img" aria-hidden="true"></span>
+    <p class="label">Neste prosjekt</p>
+    <p class="pd-next__title" data-pd="next-title"></p>
+  </a>
+</article>
+</main>
+
+<footer class="site-footer" data-header-theme="dark">
+  <div class="container site-footer__top">
+    <div class="site-footer__cta">
+      <h2 class="h2">La oss fortelle<br><em class="script">din</em> historie</h2>
+      <a class="btn btn--coral" href="kontakt.html">La oss ta en prat <span class="btn__arrow" aria-hidden="true"></span></a>
+    </div>
+    <div class="site-footer__cols">
+      <div>
+        <p class="label">Tjenester</p>
+        <ul>
+          <li><a href="design.html">Merkevare &amp; strategi</a></li>
+          <li><a href="design.html">Grafisk design</a></li>
+          <li><a href="design.html">Digital synlighet</a></li>
+          <li><a href="foto.html">Foto</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="label">EE Studio</p>
+        <ul>
+          <li><a href="arbeid.html">Arbeid</a></li>
+          <li><a href="om-meg.html">Om meg</a></li>
+          <li><a href="priser.html">Priser</a></li>
+          <li><a href="blogg.html">Blogg</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="label">Kontakt</p>
+        <ul>
+          <li><a href="mailto:elisabet@eestudio.no">elisabet@eestudio.no</a></li>
+          <li><a href="tel:+4748117215">+47 48 11 72 15</a></li>
+          <li>Org. nr. 922 966 192</li>
+          <li class="site-footer__social">
+            <a href="#" aria-label="Instagram">Instagram</a>
+            <a href="#" aria-label="LinkedIn">LinkedIn</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="site-footer__mark" aria-hidden="true"><span class="wordmark"></span></div>
+  <div class="container site-footer__bottom">
+    <span>EE Studio <i class="dia"></i> Elisabet Edvardsen <i class="dia"></i> Din kreative merkevarepartner</span>
+    <span>Sandnes &amp; Stavanger, Norge</span>
+  </div>
+</footer>
+
+<script src="assets/vendor/gsap.min.js" defer></script>
+<script src="assets/vendor/ScrollTrigger.min.js" defer></script>
+<script src="assets/vendor/lenis.min.js" defer></script>
+<script src="assets/js/data.js" defer></script>
+<script src="assets/js/main.js" defer></script>
+</body>
+</html>

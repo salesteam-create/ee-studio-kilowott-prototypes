@@ -1,0 +1,240 @@
+<!doctype html>
+<html lang="nb">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Priser | EE Studio</title>
+<meta name="description" content="Startpriser for fotografering og design. Alle pakker kan tilpasses ditt behov.">
+<meta name="theme-color" content="#FCFAF6">
+<link rel="icon" href="assets/img/eemark.png" type="image/png">
+<link rel="preload" href="assets/fonts/anton.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/acumin-light.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="preload" href="assets/fonts/romance.woff2" as="font" type="font/woff2" crossorigin>
+<link rel="stylesheet" href="assets/css/main.css">
+</head>
+<body data-page="priser" data-world="" data-world-lock="false" class="is-loading">
+<a class="skip" href="#main">Hopp til innhold</a>
+<div class="curtain" aria-hidden="true"><span class="curtain__mark logo-mark"></span></div>
+<div class="cursor" aria-hidden="true"><span class="cursor__label"></span></div>
+
+<header class="site-header" data-header>
+  <div class="site-header__inner">
+    <a class="site-header__logo" href="index.html" aria-label="EE Studio, til forsiden">
+      <span class="logo-mark" aria-hidden="true"></span>
+    </a>
+
+    <nav class="nav" aria-label="Hovedmeny">
+      <ul class="nav__list">
+        <li class="nav__item has-sub" data-nav="arbeid">
+          <a class="nav__link" href="arbeid.html">Arbeid</a>
+          <div class="nav__sub">
+            <a href="arbeid.html?spor=design"><span>Design</span><small>Identitet, trykk, utstilling</small></a>
+            <a href="arbeid.html?spor=foto"><span>Foto</span><small>Bedrift, portrett, event</small></a>
+            <a href="arbeid.html"><span>Alt arbeid</span><small>Hele porteføljen</small></a>
+          </div>
+        </li>
+        <li class="nav__item has-sub" data-nav="tjenester">
+          <a class="nav__link" href="design.html">Tjenester</a>
+          <div class="nav__sub">
+            <a href="design.html"><span>Design</span><small>Visuell kommunikasjon</small></a>
+            <a href="foto.html"><span>Foto</span><small>Bilder som forteller</small></a>
+          </div>
+        </li>
+        <li class="nav__item has-sub" data-nav="om">
+          <a class="nav__link" href="om-meg.html">Om meg</a>
+          <div class="nav__sub">
+            <a href="om-meg.html?spor=design"><span>Som designer</span><small>Strategi og identitet</small></a>
+            <a href="om-meg.html?spor=foto"><span>Som fotograf</span><small>Historieforteller</small></a>
+          </div>
+        </li>
+        <li class="nav__item" data-nav="blogg"><a class="nav__link" href="blogg.html">Blogg</a></li>
+        <li class="nav__item" data-nav="priser" aria-current="page"><a class="nav__link" href="priser.html">Priser</a></li>
+      </ul>
+    </nav>
+
+    <div class="site-header__end">
+      <div class="world-switch" role="group" aria-label="Velg spor">
+        <button type="button" class="world-switch__btn" data-world-set="design">Design</button>
+        <button type="button" class="world-switch__btn" data-world-set="foto">Foto</button>
+        <span class="world-switch__pill" aria-hidden="true"></span>
+      </div>
+      <a class="btn btn--coral btn--sm" href="kontakt.html" data-nav="kontakt">Ta kontakt</a>
+      <button class="burger" type="button" aria-expanded="false" aria-controls="menu" aria-label="Åpne meny">
+        <span></span><span></span>
+      </button>
+    </div>
+  </div>
+</header>
+
+<div class="menu" id="menu" aria-hidden="true">
+  <div class="menu__inner">
+    <div class="menu__group">
+      <p class="label">Tjenester</p>
+      <a class="menu__big" href="design.html">Design</a>
+      <a class="menu__big" href="foto.html">Foto</a>
+    </div>
+    <div class="menu__group">
+      <p class="label">Utforsk</p>
+      <a class="menu__link" href="arbeid.html">Arbeid</a>
+      <a class="menu__link" href="om-meg.html">Om meg</a>
+      <a class="menu__link" href="blogg.html">Blogg</a>
+      <a class="menu__link" href="priser.html">Priser</a>
+    </div>
+    <a class="btn btn--coral" href="kontakt.html">Ta kontakt <span class="btn__arrow" aria-hidden="true"></span></a>
+  </div>
+</div>
+
+<main id="main">
+<section class="phero">
+  <div class="container">
+    <div class="phero__grid">
+      <h1 class="display" data-split>Pakker tilpasset dine <em class="script">ønsker</em> og behov</h1>
+      <div class="phero__aside" data-reveal>
+        <p class="body">Her finner du startpriser. Alle oppdrag er litt forskjellige, så jeg setter gjerne sammen en pakke som passer deg.</p>
+        <div class="seg" data-world-seg role="group" aria-label="Velg tjeneste">
+          <span class="seg__pill" aria-hidden="true"></span>
+          <button class="seg__btn" type="button" data-world-set="foto">Foto</button>
+          <button class="seg__btn" type="button" data-world-set="design">Design</button>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FOTO -->
+<section class="container" data-spor-show="foto" style="padding-block:var(--sp-5)">
+  <div class="between mb-4">
+    <h2 class="h2">Foto</h2>
+    <div class="seg" data-seg="kunde" role="group" aria-label="Velg kundetype">
+      <span class="seg__pill" aria-hidden="true"></span>
+      <button class="seg__btn" type="button" data-value="bedrift" aria-pressed="true">Bedrift</button>
+      <button class="seg__btn" type="button" data-value="privat" aria-pressed="false">Privat</button>
+    </div>
+  </div>
+
+  <div class="packages" data-seg-target="kunde" data-show="bedrift">
+    <article class="pkg">
+      <div><p class="pkg__kicker">Portrettpakke</p><h3 class="pkg__name">Første inntrykket</h3></div>
+      <div class="pkg__price"><small>Fra</small><span class="num">7 900 kr</span><small>eks. mva.</small></div>
+      <ul><li>For bedrifter som ønsker profesjonelle portretter av ansatte</li><li>Planlegging</li><li>Enkel lyssetting</li><li>Bilder i høy kvalitet</li></ul>
+      <a class="btn" href="kontakt.html?tema=foto">Ta kontakt</a>
+    </article>
+    <article class="pkg pkg--pop">
+      <span class="pkg__badge">Populær</span>
+      <div><p class="pkg__kicker">Bedriftspakke</p><h3 class="pkg__name">Historien</h3></div>
+      <div class="pkg__price"><small>Fra</small><span class="num">20 900 kr</span><small>eks. mva.</small></div>
+      <ul><li>En solid bildebank for bedriften</li><li>Planleggingsmøte</li><li>4 timers fotografering</li><li>Portretter og miljøbilder</li><li>Innhold til nettside og SoMe</li></ul>
+      <a class="btn btn--coral" href="kontakt.html?tema=foto">Ta kontakt</a>
+    </article>
+    <article class="pkg">
+      <div><p class="pkg__kicker">Bedriftspakke</p><h3 class="pkg__name">Merkevare i full blomst</h3></div>
+      <div class="pkg__price"><small>Fra</small><span class="num">39 900 kr</span><small>eks. mva.</small></div>
+      <ul><li>Komplett visuell bildebank til nettside, markedsføring og SoMe</li><li>Kreativ planlegging</li><li>Heldags fotografering</li><li>Portretter, miljø og produkt</li><li>Prioritert levering</li></ul>
+      <a class="btn" href="kontakt.html?tema=foto">Ta kontakt</a>
+    </article>
+  </div>
+
+  <ul class="plist" data-seg-target="kunde" data-show="privat" hidden>
+    <li><span class="plist__name">Portrett</span><span class="plist__desc">Profilbilde eller personlig portrett, i studio eller ute.</span><span class="plist__price"><small>Fra</small>2 900 kr</span></li>
+    <li><span class="plist__name">Familie</span><span class="plist__desc">Naturlige bilder av familien, på et sted som betyr noe for dere.</span><span class="plist__price"><small>Fra</small>3 900 kr</span></li>
+    <li><span class="plist__name">Milepæler</span><span class="plist__desc">Konfirmasjon, jubileum og andre store dager.</span><span class="plist__price"><small>Fra</small>4 900 kr</span></li>
+    <li><span class="plist__name">Bryllup</span><span class="plist__desc">Fra forberedelser til første dans.</span><span class="plist__price"><small>Fra</small>14 900 kr</span></li>
+  </ul>
+</section>
+
+<!-- DESIGN -->
+<section class="container" data-spor-show="design" style="padding-block:var(--sp-5)">
+  <div class="between mb-4"><h2 class="h2">Design</h2></div>
+  <div class="feature mb-5">
+    <div>
+      <p class="label"><i class="dia"></i> Mest valgt</p>
+      <h3 class="h1 mt-3">Grunnmur-<em class="script">pakken</em></h3>
+      <p class="body mt-3" style="color:inherit;opacity:.8">Strategiworkshop, logo og visuell identitet. Fundamentet alt annet bygger på.</p>
+    </div>
+    <div class="feature__price" style="align-self:end">
+      <div><small>Fra</small><span class="num">49 900 kr</span><small>eks. mva.</small></div>
+      <a class="btn btn--coral" href="kontakt.html?tema=design">Ta kontakt <span class="btn__arrow" aria-hidden="true"></span></a>
+    </div>
+  </div>
+  <ul class="plist">
+    <li><span class="plist__name">Logo</span><span class="plist__desc">Logo i alle formater, med enkel bruksveiledning.</span><span class="plist__price"><small>Fra</small>14 900 kr</span></li>
+    <li><span class="plist__name">Visuell identitet</span><span class="plist__desc">Farger, typografi, grafiske elementer og profilmanual.</span><span class="plist__price"><small>Fra</small>29 900 kr</span></li>
+    <li><span class="plist__name">Grafisk design</span><span class="plist__desc">Trykksaker, presentasjoner og SoMe-maler.</span><span class="plist__price"><small>Fra</small>1 100 kr/t</span></li>
+    <li><span class="plist__name">Utstillingsdesign</span><span class="plist__desc">Stands og utstillinger, fra konsept til produksjon.</span><span class="plist__price"><small>Fra</small>24 900 kr</span></li>
+  </ul>
+</section>
+
+<section class="container" style="padding-bottom:var(--sp-6)">
+  <p class="note"><i class="dia"></i>Prisene er veiledende startpriser. Endelig pris avhenger av omfang, og du får alltid et tilbud før vi setter i gang. Priser for privatpersoner er inkl. mva.</p>
+</section>
+
+<section class="section tint">
+  <div class="container two-col">
+    <div>
+      <h2 class="h1" data-split>Ofte stilte <em class="script">spørsmål</em></h2>
+      <a class="btn btn--coral mt-4" href="kontakt.html">Still et spørsmål <span class="btn__arrow" aria-hidden="true"></span></a>
+    </div>
+    <div class="faq">
+      <details open><summary>Hva tilbyr EE Studio?</summary><p>Design og fotografi for bedrifter og privatpersoner: fra merkevarebygging, kampanjer og redaksjonelle prosjekter til bryllup, familie og livets store milepæler.</p></details>
+      <details><summary>Hvorfor står det «fra» på prisene?</summary><p>Alle oppdrag er forskjellige. Startprisen viser hvor det begynner, og jeg tilpasser pakken etter hva du trenger.</p></details>
+      <details><summary>Hvordan booker jeg en fotografering?</summary><p>Send en melding via kontaktskjemaet, så tar vi en uforpliktende prat om behov, sted og tidspunkt.</p></details>
+      <details><summary>Kan vi foreslå lokasjon selv?</summary><p>Ja, gjerne. Jeg fotograferer i studio, på arbeidsplassen eller et sted som betyr noe for deg.</p></details>
+      <details><summary>Når får vi bildene?</summary><p>Normalt innen to uker. Med prioritert levering går det raskere.</p></details>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer class="site-footer" data-header-theme="dark">
+  <div class="container site-footer__top">
+    <div class="site-footer__cta">
+      <h2 class="h2">La oss fortelle<br><em class="script">din</em> historie</h2>
+      <a class="btn btn--coral" href="kontakt.html">La oss ta en prat <span class="btn__arrow" aria-hidden="true"></span></a>
+    </div>
+    <div class="site-footer__cols">
+      <div>
+        <p class="label">Tjenester</p>
+        <ul>
+          <li><a href="design.html">Merkevare &amp; strategi</a></li>
+          <li><a href="design.html">Grafisk design</a></li>
+          <li><a href="design.html">Digital synlighet</a></li>
+          <li><a href="foto.html">Foto</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="label">EE Studio</p>
+        <ul>
+          <li><a href="arbeid.html">Arbeid</a></li>
+          <li><a href="om-meg.html">Om meg</a></li>
+          <li><a href="priser.html">Priser</a></li>
+          <li><a href="blogg.html">Blogg</a></li>
+        </ul>
+      </div>
+      <div>
+        <p class="label">Kontakt</p>
+        <ul>
+          <li><a href="mailto:elisabet@eestudio.no">elisabet@eestudio.no</a></li>
+          <li><a href="tel:+4748117215">+47 48 11 72 15</a></li>
+          <li>Org. nr. 922 966 192</li>
+          <li class="site-footer__social">
+            <a href="#" aria-label="Instagram">Instagram</a>
+            <a href="#" aria-label="LinkedIn">LinkedIn</a>
+          </li>
+        </ul>
+      </div>
+    </div>
+  </div>
+  <div class="site-footer__mark" aria-hidden="true"><span class="wordmark"></span></div>
+  <div class="container site-footer__bottom">
+    <span>EE Studio <i class="dia"></i> Elisabet Edvardsen <i class="dia"></i> Din kreative merkevarepartner</span>
+    <span>Sandnes &amp; Stavanger, Norge</span>
+  </div>
+</footer>
+
+<script src="assets/vendor/gsap.min.js" defer></script>
+<script src="assets/vendor/ScrollTrigger.min.js" defer></script>
+<script src="assets/vendor/lenis.min.js" defer></script>
+<script src="assets/js/data.js" defer></script>
+<script src="assets/js/main.js" defer></script>
+</body>
+</html>
