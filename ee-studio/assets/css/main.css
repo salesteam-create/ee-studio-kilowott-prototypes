@@ -9,6 +9,12 @@
 @font-face { font-family: "Acumin"; src: url("../fonts/acumin-lightitalic.woff2") format("woff2"); font-weight: 300; font-style: italic; font-display: swap; }
 @font-face { font-family: "Acumin"; src: url("../fonts/acumin-semibold.woff2") format("woff2"); font-weight: 600; font-display: swap; }
 @font-face { font-family: "Romance"; src: url("../fonts/romance.woff2") format("woff2"); font-weight: 400; font-style: italic; font-display: swap; }
+/* Free OFL stand-ins. Used automatically when the licensed files above are absent
+   (e.g. the public GitHub Pages preview). Drop the licensed files in to switch back. */
+@font-face { font-family: "Archivo"; src: url("../fonts/archivo-300.woff2") format("woff2"); font-weight: 300; font-display: swap; }
+@font-face { font-family: "Archivo"; src: url("../fonts/archivo-300-italic.woff2") format("woff2"); font-weight: 300; font-style: italic; font-display: swap; }
+@font-face { font-family: "Archivo"; src: url("../fonts/archivo-600.woff2") format("woff2"); font-weight: 600; font-display: swap; }
+@font-face { font-family: "Playfair"; src: url("../fonts/playfair-500-italic.woff2") format("woff2"); font-weight: 400; font-style: italic; font-display: swap; }
 
 :root {
   /* Palette */
@@ -47,8 +53,8 @@
 
   /* Type */
   --f-display: "Anton", "Oswald", Impact, "Arial Narrow", sans-serif;
-  --f-text: "Acumin", "Helvetica Neue", Arial, sans-serif;
-  --f-script: "Romance", "Playfair Display", Georgia, serif;
+  --f-text: "Acumin", "Archivo", "Helvetica Neue", Arial, sans-serif;
+  --f-script: "Romance", "Playfair", Georgia, serif;
 
   --fs-hero: clamp(3rem, 7.4vw, 8.6rem);
   --fs-mega: clamp(4.4rem, 15vw, 17rem);

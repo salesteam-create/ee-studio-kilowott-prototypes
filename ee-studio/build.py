@@ -25,8 +25,6 @@ HEAD = """<!doctype html>
 <meta name="theme-color" content="#FCFAF6">
 <link rel="icon" href="assets/img/eemark.png" type="image/png">
 <link rel="preload" href="assets/fonts/anton.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="assets/fonts/acumin-light.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="preload" href="assets/fonts/romance.woff2" as="font" type="font/woff2" crossorigin>
 <link rel="stylesheet" href="assets/css/main.css">
 </head>
 <body data-page="{key}" data-world="{world}" data-world-lock="{lock}" class="is-loading">

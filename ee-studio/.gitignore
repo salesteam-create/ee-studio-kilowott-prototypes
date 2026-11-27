@@ -1,6 +1,4 @@
-# Repo is public: keep licensed fonts and client photos out of git.
-# Copy them in locally (see README) to run the prototype.
+# Licensed fonts stay out of the public repo. The site falls back to free
+# stand-ins (Archivo, Playfair Display) when these files are missing.
 assets/fonts/acumin-*.woff2
 assets/fonts/romance.woff2
-assets/img/*
-!assets/img/.gitkeep

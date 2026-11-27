@@ -16,7 +16,7 @@ python3 -m http.server 8765   # then open http://localhost:8765
 - `assets/js/data.js` portfolio projects (add real images and copy here)
 - `assets/js/main.js` interactions (hero teasers, drop section, horizontal rail, filters, transitions)
 
-## Not in git (public repo)
-Licensed fonts (Acumin Pro, Romance Eighties) and client photos are git-ignored.
-Get them from the shared Drive folder and place them in `assets/fonts/` and `assets/img/`.
+## Fonts (public repo)
+Licensed fonts (Acumin Pro, Romance Eighties) are git-ignored; the site falls back to free Archivo and Playfair Display.
+Place the licensed files in `assets/fonts/` to use the real fonts.
 Both fonts need a web licence before launch.
