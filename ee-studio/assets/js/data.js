@@ -842,18 +842,6 @@ window.EE_PROJECTS = [
     "s": "assets/work/havneterminalen-8-s.webp",
     "w": 1920,
     "h": 1282
-   },
-   {
-    "src": "assets/work/havneterminalen-9.webp",
-    "s": "assets/work/havneterminalen-9-s.webp",
-    "w": 2000,
-    "h": 1333
-   },
-   {
-    "src": "assets/work/havneterminalen-10.webp",
-    "s": "assets/work/havneterminalen-10-s.webp",
-    "w": 2000,
-    "h": 1318
    }
   ],
   "desc": "Menneskene, kranene og cruiseskipene. Et år med bilder fra Sandnes Havneterminal.",
@@ -1741,12 +1729,6 @@ window.EE_PROJECTS = [
     "src": "assets/work/portretter-8.webp",
     "s": "assets/work/portretter-8-s.webp",
     "w": 1267,
-    "h": 2000
-   },
-   {
-    "src": "assets/work/portretter-9.webp",
-    "s": "assets/work/portretter-9-s.webp",
-    "w": 1383,
     "h": 2000
    }
   ],

@@ -134,25 +134,46 @@
     const tot = $("[data-hgal-total]"); if (tot) tot.textContent = pad(list.length);
   });
 
-  // Filters (arbeid + design grid)
+  // Filters (arbeid + design grid). Bars that target the same grid share state, so path + category combine.
+  const fstate = new Map();
   $$("[data-filter]").forEach((bar) => {
     const target = $(bar.dataset.filter);
+    if (!target) return;
     const key = bar.dataset.key || "cat";
     const items = () => $$(".ix, .card", target);
-    const values = Array.from(new Set(items().map((el) => el.dataset[key])));
+    if (!fstate.has(target)) fstate.set(target, { state: {}, bars: [] });
+    const F = fstate.get(target);
+    F.bars.push({ bar, key });
     if (bar.dataset.auto !== undefined) {
+      const values = Array.from(new Set(items().map((el) => el.dataset[key])));
       bar.innerHTML = `<button type="button" data-v="" aria-pressed="true">${T("Alle", "All")}</button>` + values.map((v) => `<button type="button" data-v="${esc(v)}" aria-pressed="false">${esc(v)}</button>`).join("");
     }
-    const count = $("[data-count]");
-    const apply = (v) => {
-      $$("button", bar).forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.v === v)));
+    const apply = () => {
       let n = 0;
-      items().forEach((el) => { const ok = !v || el.dataset[key] === v; el.hidden = !ok; if (ok) n++; });
+      items().forEach((el) => {
+        const ok = Object.entries(F.state).every(([k, v]) => !v || el.dataset[k] === v);
+        el.hidden = !ok; if (ok) n++;
+      });
+      F.bars.forEach(({ bar: b, key: k }) => {
+        // hide category buttons that have no match in the current path
+        $$("button", b).forEach((btn) => {
+          btn.setAttribute("aria-pressed", String((F.state[k] || "") === btn.dataset.v));
+          if (k === "cat" && btn.dataset.v) btn.hidden = !items().some((el) => el.dataset.cat === btn.dataset.v && (!F.state.world || el.dataset.world === F.state.world));
+        });
+      });
+      const count = $("[data-count]");
       if (count) count.textContent = `${n} ${T("prosjekter", "projects")}`;
       G && ScrollTrigger.refresh();
     };
-    bar.addEventListener("click", (e) => { const b = e.target.closest("button"); if (b) apply(b.dataset.v); });
-    apply(params.get(key === "world" ? "spor" : key) || "");
+    bar.addEventListener("click", (e) => {
+      const b = e.target.closest("button"); if (!b) return;
+      F.state[key] = b.dataset.v;
+      if (key === "world") F.state.cat = "";
+      apply();
+    });
+    const init = params.get(key === "world" ? "spor" : key);
+    if (init) F.state[key] = init;
+    apply();
   });
 
   // Hover preview for index rows
@@ -241,13 +262,77 @@
     on(rows[0]);
   });
 
+  /* Remember the chosen path (design / foto) so About can follow the hero choice */
+  const remember = (w) => { try { localStorage.setItem("ee-path", w); } catch (e) { /* private mode */ } };
+  if (body.dataset.page === "tjenester") remember(location.pathname.includes("foto") ? "foto" : "design");
+  $$("[data-hero-set]").forEach((a) => a.addEventListener("click", () => remember(a.dataset.heroSet)));
+  const remembered = () => { try { return localStorage.getItem("ee-path"); } catch (e) { return null; } };
+
   /* Bio tabs (about) */
   $$("[data-bio]").forEach((wrap) => {
     const btns = $$(".tabs button", wrap);
     const select = (v) => { btns.forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.v === v))); $$("[data-bio-v]", wrap).forEach((el) => { el.hidden = el.dataset.bioV !== v; }); };
     btns.forEach((b) => b.addEventListener("click", () => select(b.dataset.v)));
-    select(params.get("spor") === "design" ? "design" : "foto");
+    const pick = params.get("spor") || remembered();
+    select(pick === "design" ? "design" : "foto");
   });
+
+  /* Foto service picker: Bedrift / Privat */
+  $$("[data-picker]").forEach((pk) => {
+    const segBtns = $$(".seg2 button", pk);
+    const choose = (btn) => {
+      const list = btn.closest("[role='tablist']");
+      $$("[role='tab']", list).forEach((b) => b.setAttribute("aria-selected", String(b === btn)));
+      $$("[data-picker-panel]", pk).forEach((p) => { p.hidden = p.id !== btn.getAttribute("aria-controls"); });
+      const panel = $(`#${btn.getAttribute("aria-controls")}`);
+      if (panel && G && !reduced) gsap.fromTo(panel.children, { y: 24, opacity: 0 }, { y: 0, opacity: 1, duration: .7, stagger: .06, ease: "expo.out", clearProps: "transform,opacity" });
+    };
+    const group = (g) => {
+      segBtns.forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.grp === g)));
+      $$(".picker__list", pk).forEach((l) => { l.hidden = l.dataset.show !== g; });
+      const list = $(`.picker__list[data-show='${g}']`, pk);
+      choose($("[role='tab']", list));
+    };
+    segBtns.forEach((b) => b.addEventListener("click", () => group(b.dataset.grp)));
+    pk.addEventListener("click", (e) => { const b = e.target.closest("[role='tab']"); if (b) choose(b); });
+    if (fine) pk.addEventListener("mouseover", (e) => { const b = e.target.closest("[role='tab']"); if (b && b.getAttribute("aria-selected") !== "true") choose(b); });
+    $$("[data-grp-link]").forEach((a) => a.addEventListener("click", (e) => {
+      e.preventDefault(); group(a.dataset.grpLink);
+      const y = pk.getBoundingClientRect().top + scrollY - 70;
+      lenis ? lenis.scrollTo(y, { duration: 1.2 }) : scrollTo({ top: y, behavior: "smooth" });
+    }));
+    if (params.get("kunde") === "privat") group("privat");
+  });
+
+  /* Drop section: "visuell kommunikasjon" drops into each discipline */
+  const drop = $("[data-drop]");
+  if (drop) {
+    const words = $$(".drop__word", drop), texts = $$(".drop__text", drop), imgs = $$(".drop__img img", drop), steps = $$(".drop__step", drop);
+    const n = words.length; let cur = -1; let st = null;
+    const set = (k) => {
+      if (k === cur) return;
+      const dir = k > cur ? 1 : -1, anim = G && !reduced && cur >= 0;
+      words.forEach((w, j) => {
+        if (!G) { w.style.transform = j === k ? "none" : "translateY(-140%)"; return; }
+        if (j === k) anim ? gsap.fromTo(w, { yPercent: -140 * dir }, { yPercent: 0, duration: .9, ease: "expo.out", overwrite: true }) : gsap.set(w, { yPercent: 0 });
+        else if (j === cur && anim) gsap.to(w, { yPercent: 140 * dir, duration: .7, ease: "expo.out", overwrite: true });
+        else gsap.set(w, { yPercent: -140, overwrite: true });
+      });
+      imgs.forEach((im, j) => { im.classList.toggle("was", j === cur); im.classList.toggle("is-on", j === k); });
+      texts.forEach((t, j) => t.classList.toggle("is-on", j === k));
+      steps.forEach((t, j) => { t.classList.toggle("is-on", j === k); t.setAttribute("aria-pressed", String(j === k)); });
+      cur = k;
+    };
+    set(0);
+    steps.forEach((b, k) => b.addEventListener("click", () => {
+      if (st) { const y = st.start + (st.end - st.start) * ((k + 0.5) / n); lenis ? lenis.scrollTo(y, { duration: 1 }) : scrollTo({ top: y }); }
+      else set(k);
+    }));
+    if (G && !reduced) {
+      st = ScrollTrigger.create({ trigger: drop, start: "top top", end: () => `+=${innerHeight * (n - 1) * 0.7}`, pin: $(".drop__pin", drop), anticipatePin: 1,
+        onUpdate: (self) => set(Math.min(n - 1, Math.floor(self.progress * n))) });
+    }
+  }
 
   /* Form (prototype: no backend yet) */
   $$("form[data-form]").forEach((f) => {

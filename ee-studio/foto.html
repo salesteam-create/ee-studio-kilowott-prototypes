@@ -10,7 +10,7 @@
 <link rel="alternate" hreflang="en" href="en/foto.html">
 <link rel="icon" href="assets/img/eemark.png" type="image/png">
 <link rel="preload" href="assets/fonts/anton.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="assets/css/main.css?v=47c95ccc">
+<link rel="stylesheet" href="assets/css/main.css?v=a13e0950">
 </head>
 <body data-page="tjenester" data-theme="dark" class="is-loading">
 <a class="skip" href="#main">Hopp til innhold</a>
@@ -24,11 +24,15 @@
       <a class="back" href="index.html" data-back><span class="back__arr" aria-hidden="true"></span><span class="back__txt">Tilbake</span></a>
     </div>
     <nav class="hdr__nav" aria-label="Hovedmeny">
-      <div class="hdr__item" data-nav="arbeid"><a class="link" href="arbeid.html">Arbeid</a></div>
+      <div class="hdr__item" data-nav="arbeid"><a class="link" href="arbeid.html">Arbeid</a>
+        <div class="hdr__sub"><a class="link" href="arbeid.html?spor=design">Design</a><a class="link" href="arbeid.html?spor=foto">Foto</a><a class="link" href="arbeid.html">Alt arbeid</a></div>
+      </div>
       <div class="hdr__item" data-nav="tjenester" aria-current="page"><a class="link" href="design.html">Tjenester</a>
         <div class="hdr__sub"><a class="link" href="design.html">Design</a><a class="link" href="foto.html">Foto</a></div>
       </div>
-      <div class="hdr__item" data-nav="om"><a class="link" href="om-meg.html">Om meg</a></div>
+      <div class="hdr__item" data-nav="om"><a class="link" href="om-meg.html">Om meg</a>
+        <div class="hdr__sub"><a class="link" href="om-meg.html?spor=design">Som designer</a><a class="link" href="om-meg.html?spor=foto">Som fotograf</a></div>
+      </div>
       <div class="hdr__item" data-nav="blogg"><a class="link" href="blogg.html">Blogg</a></div>
       <div class="hdr__item" data-nav="priser"><a class="link" href="priser.html">Priser</a></div>
     </nav>
@@ -68,11 +72,11 @@
   <div class="lhero__body">
     <div>
       <p class="kicker kicker--light"><span class="dot"></span>Foto</p>
-      <h1 class="lhero__title" data-split>Bilder som forteller hvem du er.</h1>
+      <h1 class="lhero__title" data-split>Bilder som forteller <em>hvem du er.</em></h1>
     </div>
     <nav class="lhero__choices" aria-label="Fotografi for" data-reveal>
-      <a class="lhero__choice" href="priser.html?spor=foto&amp;kunde=bedrift"><span class="t-lg">Bedrift</span><small>Portrett, miljø, event, produkt <span class="arrow" aria-hidden="true"></span></small></a>
-      <a class="lhero__choice" href="priser.html?spor=foto&amp;kunde=privat"><span class="t-lg">Privat</span><small>Bryllup, par, familie <span class="arrow" aria-hidden="true"></span></small></a>
+      <a class="lhero__choice" href="#tilbud" data-grp-link="bedrift"><span class="t-lg">Bedrift</span><small>Portrett, miljø, event, produkt <span class="arrow" aria-hidden="true"></span></small></a>
+      <a class="lhero__choice" href="#tilbud" data-grp-link="privat"><span class="t-lg">Privat</span><small>Bryllup, par, familie <span class="arrow" aria-hidden="true"></span></small></a>
     </nav>
   </div>
 </section>
@@ -83,26 +87,48 @@
   <div class="albums__readout" aria-hidden="true"><span class="t-mega albums__num" data-readout-num>01</span><span class="t-mega" data-readout-name></span></div>
 </section>
 
-<section class="wrap offer">
-  <div class="offer__col">
-    <p class="kicker kicker--light"><span class="dot"></span>Bedrift</p>
-    <h2 class="t-lg" style="margin:1rem 0 var(--s-2)">Bilder som bygger tillit</h2>
-    <ul class="offer__list">
-      <li><span>Ansatt- og portrettfoto</span><span class="offer__p">fra 7 900 kr</span></li>
-      <li><span>Miljøfoto og bildebank</span><span class="offer__p">fra 20 900 kr</span></li>
-      <li><span>Merkevare i full blomst</span><span class="offer__p">fra 39 900 kr</span></li>
-      <li><span>Event, produkt og interiør</span><span class="offer__p">På forespørsel</span></li>
-    </ul>
+<section class="wrap picker" data-picker id="tilbud">
+  <div>
+    <p class="kicker kicker--light"><span class="dot"></span>Tjenester jeg kan tilby deg</p>
+    <h2 class="t-xl" style="margin:1rem 0 var(--s-2)">Hva trenger <em>du?</em></h2>
+    <div class="seg2" role="group" aria-label="Velg kundetype"><button type="button" data-grp="bedrift" aria-pressed="true">Bedrift</button><button type="button" data-grp="privat" aria-pressed="false">Privat</button></div>
+    <div class="picker__list" role="tablist" data-show="bedrift"><button class="picker__btn" role="tab" aria-selected="true" aria-controls="sv-ansatt"><span class="t-lg">Ansattfoto</span><small>fra 7 900 kr</small></button><button class="picker__btn" role="tab" aria-selected="false" aria-controls="sv-miljo"><span class="t-lg">Miljøfoto</span><small>fra 20 900 kr</small></button><button class="picker__btn" role="tab" aria-selected="false" aria-controls="sv-produkt"><span class="t-lg">Produktfoto</span><small></small></button><button class="picker__btn" role="tab" aria-selected="false" aria-controls="sv-event"><span class="t-lg">Event og konferanse</span><small></small></button><button class="picker__btn" role="tab" aria-selected="false" aria-controls="sv-kampanje"><span class="t-lg">Kampanjebilder</span><small>fra 39 900 kr</small></button></div>
+    <div class="picker__list" role="tablist" data-show="privat" hidden><button class="picker__btn" role="tab" aria-selected="false" aria-controls="sv-portrett"><span class="t-lg">Portrett</span><small>fra 2 900 kr</small></button><button class="picker__btn" role="tab" aria-selected="false" aria-controls="sv-par"><span class="t-lg">Par og familie</span><small>fra 3 900 kr</small></button><button class="picker__btn" role="tab" aria-selected="false" aria-controls="sv-bryllup"><span class="t-lg">Bryllup</span><small>fra 14 900 kr</small></button></div>
+    <p class="small muted" style="margin-top:1rem">Alle priser er startpriser. Jeg setter sammen en pakke som passer deg. <a class="link link--accent" href="priser.html?spor=foto">Se alle pakker</a></p>
   </div>
-  <div class="offer__col">
-    <p class="kicker kicker--light"><span class="dot"></span>Privat</p>
-    <h2 class="t-lg" style="margin:1rem 0 var(--s-2)">Øyeblikk som varer</h2>
-    <ul class="offer__list">
-      <li><span>Portrett</span><span class="offer__p">fra 2 900 kr</span></li>
-      <li><span>Par og familie</span><span class="offer__p">fra 3 900 kr</span></li>
-      <li><span>Bryllup, Begynnelsen-pakken</span><span class="offer__p">fra 14 900 kr</span></li>
-    </ul>
-    <a class="cta-pill" href="priser.html?spor=foto" style="margin-top:var(--s-2)">Se alle pakker <span class="arrow" aria-hidden="true"></span></a>
+  <div>
+      <div class="picker__panel" id="sv-ansatt" role="tabpanel" data-picker-panel>
+        <div class="picker__media"><img src="assets/work/portretter-2-s.webp" alt="" loading="lazy"></div>
+        <div class="picker__copy"><h3 class="t-md">Ansattfoto</h3><p class="prose">Et godt portrett handler om mer enn et fint smil. Det skal formidle personlighet, profesjonalitet og skape tillit. I studio eller på arbeidsplassen, tilpasset bedriftens profil.</p><p class="perfect"><b>Perfekt til</b>Nettside, LinkedIn, pressemateriell og signaturer.</p><p class="picker__from"><small>fra</small>7 900 <small>kr</small></p><a class="cta-pill" href="kontakt.html?tema=foto">La oss ta en prat <span class="arrow" aria-hidden="true"></span></a></div>
+      </div>
+      <div class="picker__panel" id="sv-miljo" role="tabpanel" data-picker-panel hidden>
+        <div class="picker__media"><img src="assets/work/objektsikring-2-s.webp" alt="" loading="lazy"></div>
+        <div class="picker__copy"><h3 class="t-md">Miljøfoto</h3><p class="prose">Menneskene, stedet og arbeidet slik det faktisk er. Ekte bilder som viser hva dere står for.</p><p class="perfect"><b>Perfekt til</b>Nettside, rekruttering og sosiale medier.</p><p class="picker__from"><small>fra</small>20 900 <small>kr</small></p><a class="cta-pill" href="kontakt.html?tema=foto">La oss ta en prat <span class="arrow" aria-hidden="true"></span></a></div>
+      </div>
+      <div class="picker__panel" id="sv-produkt" role="tabpanel" data-picker-panel hidden>
+        <div class="picker__media"><img src="assets/work/electrocompaniet-4-s.webp" alt="" loading="lazy"></div>
+        <div class="picker__copy"><h3 class="t-md">Produktfoto</h3><p class="prose">Produktet i bruk, i riktige omgivelser og med detaljene som gjør det unikt.</p><p class="perfect"><b>Perfekt til</b>Nettbutikk, kampanjer og salgsmateriell.</p><p class="picker__from" style="font-size:1.6rem"><small>Pris</small>på forespørsel</p><a class="cta-pill" href="kontakt.html?tema=foto">La oss ta en prat <span class="arrow" aria-hidden="true"></span></a></div>
+      </div>
+      <div class="picker__panel" id="sv-event" role="tabpanel" data-picker-panel hidden>
+        <div class="picker__media"><img src="assets/work/accenture-ons-2-s.webp" alt="" loading="lazy"></div>
+        <div class="picker__copy"><h3 class="t-md">Event og konferanse</h3><p class="prose">Stemningen, talerne og øyeblikkene mellom programpostene, dokumentert diskret og levert raskt.</p><p class="perfect"><b>Perfekt til</b>Pressemeldinger, oppsummering og neste års markedsføring.</p><p class="picker__from" style="font-size:1.6rem"><small>Pris</small>på forespørsel</p><a class="cta-pill" href="kontakt.html?tema=foto">La oss ta en prat <span class="arrow" aria-hidden="true"></span></a></div>
+      </div>
+      <div class="picker__panel" id="sv-kampanje" role="tabpanel" data-picker-panel hidden>
+        <div class="picker__media"><img src="assets/work/woodling-3-s.webp" alt="" loading="lazy"></div>
+        <div class="picker__copy"><h3 class="t-md">Kampanjebilder</h3><p class="prose">Planlagte bilder med et tydelig budskap, laget for å skille seg ut i feeden og på trykk.</p><p class="perfect"><b>Perfekt til</b>Lanseringer, annonser og sosiale medier.</p><p class="picker__from"><small>fra</small>39 900 <small>kr</small></p><a class="cta-pill" href="kontakt.html?tema=foto">La oss ta en prat <span class="arrow" aria-hidden="true"></span></a></div>
+      </div>
+      <div class="picker__panel" id="sv-portrett" role="tabpanel" data-picker-panel hidden>
+        <div class="picker__media"><img src="assets/work/portretter-5-s.webp" alt="" loading="lazy"></div>
+        <div class="picker__copy"><h3 class="t-md">Portrett</h3><p class="prose">Et personlig portrett i en trygg og avslappet setting, til profil eller veggen.</p><p class="perfect"><b>Perfekt til</b>Profilbilder, gaver og minner.</p><p class="picker__from"><small>fra</small>2 900 <small>kr</small></p><a class="cta-pill" href="kontakt.html?tema=foto">La oss ta en prat <span class="arrow" aria-hidden="true"></span></a></div>
+      </div>
+      <div class="picker__panel" id="sv-par" role="tabpanel" data-picker-panel hidden>
+        <div class="picker__media"><img src="assets/work/par-2-s.webp" alt="" loading="lazy"></div>
+        <div class="picker__copy"><h3 class="t-md">Par og familie</h3><p class="prose">Naturlige bilder av dem som betyr mest, på et sted som betyr noe.</p><p class="perfect"><b>Perfekt til</b>Hjemmet, julekort og album.</p><p class="picker__from"><small>fra</small>3 900 <small>kr</small></p><a class="cta-pill" href="kontakt.html?tema=foto">La oss ta en prat <span class="arrow" aria-hidden="true"></span></a></div>
+      </div>
+      <div class="picker__panel" id="sv-bryllup" role="tabpanel" data-picker-panel hidden>
+        <div class="picker__media"><img src="assets/work/benedicte-isak-1-s.webp" alt="" loading="lazy"></div>
+        <div class="picker__copy"><h3 class="t-md">Bryllup</h3><p class="prose">Dagen deres, fortalt med ekte øyeblikk, detaljer og følelser.</p><p class="perfect"><b>Perfekt til</b>Album, takkekort og et nettgalleri å dele.</p><p class="picker__from"><small>fra</small>14 900 <small>kr</small></p><a class="cta-pill" href="kontakt.html?tema=foto">La oss ta en prat <span class="arrow" aria-hidden="true"></span></a></div>
+      </div>
   </div>
 </section>
 
@@ -142,7 +168,7 @@
 <script src="assets/vendor/gsap.min.js?v=47da594c" defer></script>
 <script src="assets/vendor/ScrollTrigger.min.js?v=ba1fa78e" defer></script>
 <script src="assets/vendor/lenis.min.js?v=79e3a064" defer></script>
-<script src="assets/js/data.js?v=7b2db8be" defer></script>
-<script src="assets/js/main.js?v=8d142527" defer></script>
+<script src="assets/js/data.js?v=63f5fdc5" defer></script>
+<script src="assets/js/main.js?v=de604a32" defer></script>
 </body>
 </html>
