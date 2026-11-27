@@ -304,33 +304,31 @@
     if (params.get("kunde") === "privat") group("privat");
   });
 
-  /* Drop section: "visuell kommunikasjon" drops into each discipline */
+  /* Chapters: "Jeg hjelper din bedrift med ..." pinned, one discipline per scroll step */
   const drop = $("[data-drop]");
   if (drop) {
-    const words = $$(".drop__word", drop), texts = $$(".drop__text", drop), imgs = $$(".drop__img img", drop), steps = $$(".drop__step", drop);
-    const n = words.length; let cur = -1; let st = null;
+    const words = $$(".chap__word", drop), texts = $$(".chap__text", drop), bgs = $$(".chap__bg", drop), steps = $$(".chap__step", drop);
+    const cur = $("[data-chap-cur]", drop), bar = $(".chap__bar span", drop);
+    const n = words.length; let at = -1; let st = null;
     const set = (k) => {
-      if (k === cur) return;
-      const dir = k > cur ? 1 : -1, anim = G && !reduced && cur >= 0;
-      words.forEach((w, j) => {
-        if (!G) { w.style.transform = j === k ? "none" : "translateY(-140%)"; return; }
-        if (j === k) anim ? gsap.fromTo(w, { yPercent: -140 * dir }, { yPercent: 0, duration: .9, ease: "expo.out", overwrite: true }) : gsap.set(w, { yPercent: 0 });
-        else if (j === cur && anim) gsap.to(w, { yPercent: 140 * dir, duration: .7, ease: "expo.out", overwrite: true });
-        else gsap.set(w, { yPercent: -140, overwrite: true });
-      });
-      imgs.forEach((im, j) => { im.classList.toggle("was", j === cur); im.classList.toggle("is-on", j === k); });
+      if (k === at) return;
+      words.forEach((w, j) => { w.classList.toggle("is-on", j === k); w.classList.toggle("is-up", j < k); });
+      bgs.forEach((im, j) => { im.classList.toggle("was", j === at); im.classList.toggle("is-on", j === k); });
       texts.forEach((t, j) => t.classList.toggle("is-on", j === k));
       steps.forEach((t, j) => { t.classList.toggle("is-on", j === k); t.setAttribute("aria-pressed", String(j === k)); });
-      cur = k;
+      if (cur) cur.textContent = pad(k + 1);
+      at = k;
     };
+    // load the first two backgrounds right away so the first wipe never shows a blank frame
+    bgs.slice(0, 2).forEach((im) => { im.loading = "eager"; });
     set(0);
     steps.forEach((b, k) => b.addEventListener("click", () => {
-      if (st) { const y = st.start + (st.end - st.start) * ((k + 0.5) / n); lenis ? lenis.scrollTo(y, { duration: 1 }) : scrollTo({ top: y }); }
+      if (st) { const y = st.start + (st.end - st.start) * ((k + 0.5) / n); lenis ? lenis.scrollTo(y, { duration: 1.2 }) : scrollTo({ top: y, behavior: "smooth" }); }
       else set(k);
     }));
     if (G && !reduced) {
-      st = ScrollTrigger.create({ trigger: drop, start: "top top", end: () => `+=${innerHeight * (n - 1) * 0.7}`, pin: $(".drop__pin", drop), anticipatePin: 1,
-        onUpdate: (self) => set(Math.min(n - 1, Math.floor(self.progress * n))) });
+      st = ScrollTrigger.create({ trigger: drop, start: "top top", end: () => `+=${innerHeight * (n - 1) * 0.8}`, pin: $(".chap__pin", drop), anticipatePin: 1,
+        onUpdate: (self) => { set(Math.min(n - 1, Math.floor(self.progress * n))); if (bar) bar.style.transform = `scaleX(${self.progress})`; } });
     }
   }
 
