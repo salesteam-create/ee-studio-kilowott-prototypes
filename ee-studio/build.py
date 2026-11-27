@@ -7,6 +7,7 @@ The script wraps it in the shared head, header and footer and writes
 the result to the project root (index.html, design.html, ...).
 Run:  python3 build.py
 """
+import hashlib
 import pathlib
 import re
 
@@ -52,5 +53,11 @@ for page in sorted((SRC / "pages").glob("*.html")):
         + footer
         + "</body>\n</html>\n"
     )
+    # Cache-bust CSS/JS so a new deploy never pairs new HTML with stale assets.
+    def stamp(m):
+        f = ROOT / m.group(2)
+        v = hashlib.md5(f.read_bytes()).hexdigest()[:8] if f.exists() else "0"
+        return f'{m.group(1)}"{m.group(2)}?v={v}"'
+    html = re.sub(r'((?:href|src)=)"(assets/(?:css|js|vendor)/[^"?]+)"', stamp, html)
     (ROOT / page.name).write_text(html, encoding="utf-8")
     print("built", page.name)
