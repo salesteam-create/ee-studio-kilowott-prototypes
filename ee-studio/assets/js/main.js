@@ -99,11 +99,11 @@
   // Card grid (design page)
   $$("[data-grid]").forEach((grid) => {
     const w = grid.dataset.grid;
-    grid.innerHTML = P.filter((p) => p.world === w).map((p) => {
+    grid.innerHTML = P.filter((p) => w === "all" || p.world === w).map((p) => {
       const im = p.images[0];
-      return `<a class="card" href="${href(p)}" data-cat="${esc(p.cat)}" data-cursor="Se">
+      return `<a class="card" href="${href(p)}" data-cat="${esc(p.cat)}" data-world="${p.world}" data-cursor="Se">
         <div class="card__img" data-clip><img src="${im.src}" width="${im.w}" height="${im.h}" alt="${esc(p.title)}" loading="lazy" decoding="async"></div>
-        <div class="card__row"><b>${esc(p.title)}</b><span class="muted">${esc(p.cat)}</span></div></a>`;
+        <div class="card__row"><b>${esc(p.title)}</b><span class="muted">${w === "all" ? worldName(p.world) + ", " : ""}${esc(p.cat)}</span></div></a>`;
     }).join("");
   });
 
@@ -115,6 +115,18 @@
         <div class="album__img"><img src="${im.s}" alt="${esc(p.title)}" loading="lazy" decoding="async"></div>
         <div class="album__cap"><span>${esc(p.cat)}</span><span>${pad(p.images.length)} bilder</span></div></a>`;
     }).join("");
+  });
+
+  // Horizontal gallery (landing)
+  $$("[data-hgal-list]").forEach((track) => {
+    const list = track.dataset.hgalList.split(",").map(bySlug).filter(Boolean);
+    track.innerHTML = list.map((p, i) => {
+      const im = p.images[0];
+      return `<a class="hg" href="${href(p)}" data-cursor="Se">
+        <div class="hg__img" style="--ar:${(im.w / im.h).toFixed(3)}"><img src="${im.src}" alt="${esc(p.title)}" loading="lazy" decoding="async"></div>
+        <div class="hg__cap"><span class="hg__n">${pad(i + 1)}</span><span class="t-md">${esc(p.title)}</span><span class="small">${worldName(p.world)}, ${esc(p.cat)}</span></div></a>`;
+    }).join("") + `<a class="hg hg--end" href="arbeid.html"><span class="link t-md">Alt arbeid <span class="arrow" aria-hidden="true"></span></span></a>`;
+    const tot = $("[data-hgal-total]"); if (tot) tot.textContent = pad(list.length);
   });
 
   // Filters (arbeid + design grid)
@@ -187,25 +199,31 @@
      --------------------------------------------------------- */
   const hero = $("[data-hero]");
   if (hero) {
-    const slides = $$(".hero__slide", hero);
-    const cap = $("[data-hero-cap]");
-    const num = $("[data-hero-num]");
-    const links = $$("[data-hero-set]");
+    const slides = $$(".lhero__slide", hero);
+    const cap = $("[data-hero-cap]", hero);
+    const barsEl = $("[data-hero-bars]", hero);
+    const links = $$("[data-hero-set]", hero);
+    const DUR = 4200;
     let set = "all", i = 0, timer = 0;
     const pool = () => slides.filter((s) => set === "all" || s.dataset.set === set);
     const show = (k) => {
       const list = pool(); i = (k + list.length) % list.length;
-      slides.forEach((s) => s.classList.toggle("is-on", s === list[i]));
+      const prev = slides.find((s) => s.classList.contains("is-on"));
+      slides.forEach((s) => s.classList.remove("is-prev", "is-on"));
+      if (prev) prev.classList.add("is-prev");
+      list[i].classList.add("is-on");
       cap.textContent = list[i].dataset.name;
-      num.textContent = `${pad(i + 1)} / ${pad(list.length)}`;
+      barsEl.innerHTML = list.map((_, j) => `<i class="${j < i ? "is-done" : j === i ? "is-on" : ""}" style="--dur:${DUR}ms"></i>`).join("");
     };
-    const play = () => { clearInterval(timer); if (!reduced) timer = setInterval(() => show(i + 1), 3600); };
+    const play = () => { clearInterval(timer); if (!reduced) timer = setInterval(() => show(i + 1), DUR); };
     links.forEach((a) => {
       const on = () => { if (set === a.dataset.heroSet) return; set = a.dataset.heroSet; links.forEach((l) => l.classList.toggle("is-on", l === a)); show(0); play(); };
       a.addEventListener("mouseenter", on); a.addEventListener("focus", on);
     });
-    $(".hero__paths").addEventListener("mouseleave", () => { set = "all"; links.forEach((l) => l.classList.remove("is-on")); play(); });
+    const nav = $(".lhero__choices", hero);
+    if (nav && links.length) nav.addEventListener("mouseleave", () => { set = "all"; links.forEach((l) => l.classList.remove("is-on")); show(0); play(); });
     show(0); play();
+    document.addEventListener("visibilitychange", () => (document.hidden ? clearInterval(timer) : play()));
   }
 
   /* Paths: hover swaps image */
@@ -297,12 +315,10 @@
       gsap.from(lines, { yPercent: 115, duration: 1.3, ease: "expo.out", stagger: 0.08, delay: top ? 0.35 : 0, scrollTrigger: top ? null : { trigger: el, start: "top 88%", once: true } });
     });
 
-    // Hero: frame opens to full bleed, wordmark drifts
-    const frame = $(".hero__frame");
-    if (frame) {
-      gsap.to(frame, { marginLeft: 0, marginRight: 0, ease: "none", scrollTrigger: { trigger: ".hero", start: "top top", end: "bottom top", scrub: true } });
-      gsap.to(".hero__mark", { yPercent: 40, opacity: 0.2, ease: "none", scrollTrigger: { trigger: ".hero", start: "top top", end: "bottom top", scrub: true } });
-      gsap.from(".hero__mark .wordmark", { yPercent: 60, opacity: 0, duration: 1.6, ease: "expo.out", delay: 0.2 });
+    // Hero: image drifts slower than the page, copy lifts away
+    if ($(".lhero")) {
+      gsap.to(".lhero__slides", { yPercent: 18, ease: "none", scrollTrigger: { trigger: ".lhero", start: "top top", end: "bottom top", scrub: true } });
+      gsap.to(".lhero__body, .lhero__top", { y: -60, opacity: 0, ease: "none", scrollTrigger: { trigger: ".lhero", start: "30% top", end: "90% top", scrub: true } });
     }
 
     // Statement: words light up as you read
@@ -315,12 +331,8 @@
       $$(".floater").forEach((f, i) => gsap.fromTo(f, { y: 80 * (i + 1) }, { y: -80 * (i + 1), ease: "none", scrollTrigger: { trigger: ".statement", start: "top bottom", end: "bottom top", scrub: true } }));
     }
 
-    // Stacked showcase: previous card recedes as the next covers it
+    // Stacked showcase: each card slides over the previous one, no fading
     const stack = $$(".stack__item");
-    stack.forEach((it, i) => {
-      if (i === stack.length - 1) return;
-      gsap.to($(".stack__card", it), { scale: 0.9, opacity: 0.35, ease: "none", scrollTrigger: { trigger: stack[i + 1], start: "top bottom", end: "top top", scrub: true } });
-    });
     stack.forEach((it) => gsap.fromTo($("img", it), { scale: 1.15 }, { scale: 1, ease: "none", scrollTrigger: { trigger: it, start: "top bottom", end: "top top", scrub: true } }));
 
     // Full-bleed frames open up
@@ -337,6 +349,22 @@
         const [x, y, r] = spots[i % spots.length];
         gsap.fromTo(f, { xPercent: 0, yPercent: 0, rotate: 0, scale: 0.8, opacity: 0 }, { x: () => innerWidth * x / 100, y: () => innerHeight * y / 100, rotate: r, scale: 1, opacity: 1, duration: 1.8, ease: "expo.out", delay: 0.25 + i * 0.07 });
         gsap.to(f, { y: () => innerHeight * y / 100 - 160 * (i % 2 ? 1 : 1.6), ease: "none", scrollTrigger: { trigger: ".fhero", start: "top top", end: "bottom top", scrub: true } });
+      });
+    }
+
+    // Horizontal gallery: vertical scroll drives sideways travel, images parallax inside their frames
+    const hgal = $("[data-hgal]");
+    if (hgal) {
+      const track = $(".hgal__track", hgal);
+      const items = $$(".hg:not(.hg--end)", track);
+      const cur = $("[data-hgal-cur]", hgal);
+      const bar = $(".hgal__bar span", hgal);
+      gsap.matchMedia().add("(min-width: 901px)", () => {
+        const dist = () => Math.max(0, track.scrollWidth - innerWidth);
+        const tl = gsap.to(track, { x: () => -dist(), ease: "none", scrollTrigger: { trigger: hgal, start: "top top", end: () => `+=${dist()}`, pin: true, scrub: 0.8, invalidateOnRefresh: true,
+          onUpdate: (st) => { bar.style.transform = `scaleX(${st.progress})`; cur.textContent = pad(Math.min(items.length, 1 + Math.floor(st.progress * items.length))); } } });
+        const par = items.map((it) => gsap.fromTo($("img", it), { xPercent: 5 }, { xPercent: -5, ease: "none", scrollTrigger: { trigger: it, containerAnimation: tl, start: "left right", end: "right left", scrub: true } }));
+        return () => { tl.kill(); par.forEach((x) => x.kill()); };
       });
     }
 
