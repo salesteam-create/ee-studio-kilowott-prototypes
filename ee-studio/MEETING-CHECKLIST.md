@@ -23,7 +23,7 @@ Status: ✅ done in the site · 🟡 done, needs client input · ⏳ client / Ki
 | No logo on the right side distracting from navigation | ✅ | Logo top-left only |
 | Two colour palettes: one for design, one for photo | ✅ | Design light + Salvie/Skog; Foto dark + Aprikos/Fersken |
 | Salmon (korall) accent | ✅ | CTAs, dots, counters, prices, language switch |
-| Client fonts | ✅ | Anton headlines mixed with Acumin; Romance Eighties available. Live site uses free stand-ins until web licences are bought |
+| Client fonts | ✅ | Acumin for headlines and text, Anton for price numbers; Live site uses free stand-ins until web licences are bought |
 | Photo layout expressive, full-width images | ✅ | Full-screen hero, album rail, full-bleed project images |
 | Design shown more as cards | ✅ | Card grid on the Design page |
 | Text kept in containers on wide screens | ✅ | Max-width container (1600px) |

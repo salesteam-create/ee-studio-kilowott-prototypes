@@ -730,37 +730,17 @@ b, strong { font-weight: 600; }
 /* =========================================================
    v2.3: Anton headlines mixed with Acumin, meeting-point additions
    ========================================================= */
-/* Headlines: Anton, with <em> phrases set in Acumin light italic for contrast */
-.t-xl, .lhero__title, .ctaband__track span, .reviews__title {
-  font-family: var(--f-display); font-weight: 400; letter-spacing: -.005em; line-height: .94;
-}
-.t-xl { font-size: clamp(2.8rem, 7vw, 8.4rem); }
-.lhero__title { font-size: clamp(3rem, 7.4vw, 8.8rem); max-width: 13ch; }
-.t-xl em, .lhero__title em, .reviews__title em, .drop__title em {
-  font-family: var(--f-text); font-weight: 300; font-style: italic; letter-spacing: -.045em; text-transform: none;
-}
-.t-xl em, .lhero__title em { color: inherit; }
-.stack__title .t-xl { font-size: clamp(3rem, 8.4vw, 9.6rem); text-transform: uppercase; letter-spacing: 0; }
-.ctaband__track span { letter-spacing: 0; text-transform: uppercase; }
-.next .t-xl { text-transform: uppercase; }
-.next:hover .t-xl { letter-spacing: .01em; }
-.pkg__name { font-family: var(--f-display); font-weight: 400; letter-spacing: 0; line-height: .95; text-transform: uppercase; font-size: clamp(2rem, 3vw, 3.2rem); }
-.ap__info .t-lg { font-family: var(--f-display); letter-spacing: 0; line-height: .95; text-transform: uppercase; font-size: clamp(2.4rem, 4vw, 4.4rem); }
-.paths__row .t-lg, .svc__row .t-lg { letter-spacing: -.04em; }
+/* Headlines back to Acumin only; <em> phrases render upright, same as the rest */
+.t-xl em, .lhero__title em, .reviews__title em { font-style: normal; }
 .hdr__in { font-size: 1rem; }
 .hdr__nav { gap: clamp(1.4rem, 2.6vw, 3rem); }
 .hdr__sub a { font-size: 1rem; padding: .15rem 0; }
-@media (max-width: 700px) {
-  .t-xl { font-size: clamp(2.6rem, 12vw, 3.6rem); }
-  .lhero__title { font-size: clamp(2.8rem, 13vw, 4rem); }
-  .stack__title .t-xl { font-size: 3rem; }
-}
 
 /* Drop section: "visuell kommunikasjon" drops into each discipline (client's idea) */
 .drop { position: relative; }
 .drop__pin { min-height: 100svh; display: flex; align-items: center; padding-block: calc(var(--header) + var(--s-2)) var(--s-3); }
 .drop__grid { display: grid; grid-template-columns: minmax(0, 7fr) minmax(0, 5fr); gap: var(--s-3); align-items: center; width: 100%; }
-.drop__title { font-family: var(--f-display); font-weight: 400; font-size: clamp(2.8rem, 6vw, 7rem); line-height: .95; }
+.drop__title { font-size: clamp(2.6rem, 5.6vw, 6.6rem); line-height: 1; letter-spacing: -.045em; font-weight: 300; }
 .drop__slot { display: block; position: relative; height: 1.3em; overflow: hidden; margin-top: .1em; }
 .drop__word { position: absolute; left: 0; top: 0; white-space: nowrap; font-family: var(--f-text); font-style: italic; font-weight: 300; letter-spacing: -.045em; color: var(--korall); line-height: 1.15; transform: translateY(-140%); }
 .drop__word:first-child { transform: none; }
@@ -806,8 +786,21 @@ b, strong { font-weight: 600; }
 /* Clients strip */
 .clients2 { padding-block: var(--s-3); border-top: 1px solid var(--line); overflow: hidden; }
 .clients2__row { display: flex; width: max-content; animation: marq 40s linear infinite; }
-.clients2__row span { font-family: var(--f-display); font-size: clamp(1.6rem, 3vw, 3rem); text-transform: uppercase; color: var(--fg-3); padding-right: 2.2rem; white-space: nowrap; }
+.clients2__row span { font-size: clamp(1.6rem, 3vw, 3rem); letter-spacing: -.04em; color: var(--fg-3); padding-right: 2.2rem; white-space: nowrap; }
 .clients2__row span i { font-style: normal; color: var(--korall); padding-left: 2.2rem; font-size: .6em; vertical-align: middle; }
 @media (hover: hover) { .clients2:hover .clients2__row { animation-play-state: paused; } }
 .filter--cats { margin-top: .6rem; }
 @media (prefers-reduced-motion: reduce) { .clients2__row, .ctaband__track { animation: none; } }
+
+/* Pricing: main toggle (Foto / Grafisk design) + sub toggle (Bedrift / Privat) */
+.ptoggle { display: flex; flex-wrap: wrap; align-items: center; gap: 1rem 1.6rem; margin-bottom: var(--s-3); }
+.ptoggle__main { position: relative; display: inline-grid; grid-template-columns: 1fr 1fr; padding: 5px; border-radius: 999px; background: var(--tile); }
+.ptoggle__main button { position: relative; z-index: 1; height: 3.4rem; padding: 0 1.8rem; border-radius: 999px; font-size: clamp(1.1rem, 1.5vw, 1.4rem); letter-spacing: -.02em; color: var(--fg-2); transition: color .4s var(--ease); white-space: nowrap; }
+.ptoggle__main button[aria-pressed="true"] { color: var(--krem); }
+.ptoggle__pill { position: absolute; z-index: 0; top: 5px; bottom: 5px; left: 5px; width: calc(50% - 5px); border-radius: 999px; background: var(--brun); transition: transform .6s var(--ease), background .6s; }
+.ptoggle__main[data-on="design"] .ptoggle__pill { transform: translateX(100%); background: var(--skog); }
+.ptoggle__sub { display: inline-flex; gap: .4rem; }
+.ptoggle__sub[hidden] { display: none; }
+.ptoggle__sub button { height: 2.6rem; padding: 0 1.2rem; border-radius: 999px; border: 1px solid var(--line); font-size: var(--t-sm); font-weight: 600; color: var(--fg-2); transition: background .3s, color .3s, border-color .3s; }
+.ptoggle__sub button[aria-pressed="true"] { background: var(--korall); border-color: var(--korall); color: var(--brun); }
+@media (max-width: 600px) { .ptoggle__main { width: 100%; } .ptoggle__main button { padding: 0 .8rem; } }

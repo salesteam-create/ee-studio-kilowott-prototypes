@@ -362,19 +362,26 @@
   /* Language switch keeps the current query (project, filters) */
   $$("[data-lang]").forEach((a) => { if (location.search) a.href = a.getAttribute("href") + location.search; });
 
-  /* Price tabs */
+  /* Price toggles: Foto / Grafisk design, and Bedrift / Privat inside Foto */
   $$("[data-tabs]").forEach((wrap) => {
-    const tabs = $$("[data-tab]", wrap);
-    const select = (v) => {
-      tabs.forEach((t) => t.setAttribute("aria-selected", String(t.dataset.tab === v)));
-      $$("[data-panel]", wrap).forEach((p) => { p.hidden = p.dataset.panel !== v; });
+    const main = $(".ptoggle__main", wrap), sub = $(".ptoggle__sub", wrap);
+    if (!main) return;
+    let type = params.get("spor") === "design" ? "design" : "foto";
+    let kunde = params.get("kunde") === "privat" ? "privat" : "bedrift";
+    const apply = (anim) => {
+      main.dataset.on = type;
+      $$("button", main).forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.type === type)));
+      $$("button", sub).forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.kunde === kunde)));
+      sub.hidden = type !== "foto";
+      const v = type === "design" ? "design" : `foto-${kunde}`;
+      $$("[data-panel]", wrap).forEach((pn) => { pn.hidden = pn.dataset.panel !== v; });
       const vis = $(`[data-panel='${v}']`, wrap);
-      if (vis && G && !reduced) gsap.fromTo($$(".pkg", vis), { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: .8, stagger: .08, ease: "expo.out", clearProps: "transform,opacity" });
+      if (anim && vis && G && !reduced) gsap.fromTo($$(".pkg", vis), { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: .8, stagger: .08, ease: "expo.out", clearProps: "transform,opacity" });
       G && ScrollTrigger.refresh();
     };
-    tabs.forEach((t) => t.addEventListener("click", () => select(t.dataset.tab)));
-    const spor = params.get("spor"), kunde = params.get("kunde");
-    select(spor === "design" ? "design" : kunde === "privat" ? "foto-privat" : "foto-bedrift");
+    $$("button", main).forEach((b) => b.addEventListener("click", () => { type = b.dataset.type; apply(true); }));
+    $$("button", sub).forEach((b) => b.addEventListener("click", () => { kunde = b.dataset.kunde; apply(true); }));
+    apply(false);
   });
 
   /* Drag to scroll (reviews) */

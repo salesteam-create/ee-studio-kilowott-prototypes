@@ -10,7 +10,7 @@
 <link rel="alternate" hreflang="en" href="en/priser.html">
 <link rel="icon" href="assets/img/eemark.png" type="image/png">
 <link rel="preload" href="assets/fonts/anton.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="assets/css/main.css?v=a13e0950">
+<link rel="stylesheet" href="assets/css/main.css?v=0fa86bef">
 </head>
 <body data-page="priser" data-theme="light" class="is-loading">
 <a class="skip" href="#main">Hopp til innhold</a>
@@ -68,10 +68,16 @@
 </header>
 
 <section class="wrap prices" data-tabs>
-  <div class="ptabs" role="tablist" aria-label="Velg type">
-    <button class="ptab" role="tab" data-tab="foto-bedrift" aria-selected="true"><span class="ptab__k">Foto</span>Bedrift</button>
-    <button class="ptab" role="tab" data-tab="foto-privat" aria-selected="false"><span class="ptab__k">Foto</span>Privat</button>
-    <button class="ptab" role="tab" data-tab="design" aria-selected="false"><span class="ptab__k">Merkevare</span>Design</button>
+  <div class="ptoggle">
+    <div class="ptoggle__main" role="group" aria-label="Velg tjeneste" data-on="foto">
+      <span class="ptoggle__pill" aria-hidden="true"></span>
+      <button type="button" data-type="foto" aria-pressed="true">Foto</button>
+      <button type="button" data-type="design" aria-pressed="false">Grafisk design</button>
+    </div>
+    <div class="ptoggle__sub" role="group" aria-label="Velg kundetype">
+      <button type="button" data-kunde="bedrift" aria-pressed="true">Bedrift</button>
+      <button type="button" data-kunde="privat" aria-pressed="false">Privat</button>
+    </div>
   </div>
 
   <div class="pkgs" role="tabpanel" data-panel="foto-bedrift">
@@ -197,6 +203,6 @@
 <script src="assets/vendor/ScrollTrigger.min.js?v=ba1fa78e" defer></script>
 <script src="assets/vendor/lenis.min.js?v=79e3a064" defer></script>
 <script src="assets/js/data.js?v=63f5fdc5" defer></script>
-<script src="assets/js/main.js?v=de604a32" defer></script>
+<script src="assets/js/main.js?v=f50c7d3a" defer></script>
 </body>
 </html>
