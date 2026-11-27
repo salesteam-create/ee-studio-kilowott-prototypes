@@ -362,7 +362,7 @@
   /* Language switch keeps the current query (project, filters) */
   $$("[data-lang]").forEach((a) => { if (location.search) a.href = a.getAttribute("href") + location.search; });
 
-  /* Price toggles: Foto / Grafisk design, and Bedrift / Privat inside Foto */
+  /* Price toggles: Foto / Grafisk design, each with Bedrift / Privat */
   $$("[data-tabs]").forEach((wrap) => {
     const main = $(".ptoggle__main", wrap), sub = $(".ptoggle__sub", wrap);
     if (!main) return;
@@ -372,8 +372,7 @@
       main.dataset.on = type;
       $$("button", main).forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.type === type)));
       $$("button", sub).forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.kunde === kunde)));
-      sub.hidden = type !== "foto";
-      const v = type === "design" ? "design" : `foto-${kunde}`;
+      const v = `${type}-${kunde}`;
       $$("[data-panel]", wrap).forEach((pn) => { pn.hidden = pn.dataset.panel !== v; });
       const vis = $(`[data-panel='${v}']`, wrap);
       if (anim && vis && G && !reduced) gsap.fromTo($$(".pkg", vis), { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: .8, stagger: .08, ease: "expo.out", clearProps: "transform,opacity" });
