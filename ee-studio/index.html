@@ -1,14 +1,16 @@
 <!doctype html>
-<html lang="nb">
+<html lang="nb" data-base="">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>EE Studio</title>
 <meta name="description" content="Grafisk designer og fotograf i Sandnes og Stavanger. Design og fotografi som får deg sett, forstått og husket.">
 <meta name="theme-color" content="#FAF8F5">
+<link rel="alternate" hreflang="nb" href="index.html">
+<link rel="alternate" hreflang="en" href="en/index.html">
 <link rel="icon" href="assets/img/eemark.png" type="image/png">
 <link rel="preload" href="assets/fonts/anton.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="assets/css/main.css?v=ed46946d">
+<link rel="stylesheet" href="assets/css/main.css?v=47c95ccc">
 </head>
 <body data-page="index" data-theme="light" class="is-loading">
 <a class="skip" href="#main">Hopp til innhold</a>
@@ -17,7 +19,10 @@
 
 <header class="hdr" data-hdr>
   <div class="hdr__in">
-    <a class="hdr__logo" href="index.html" aria-label="EE Studio, forsiden"><span class="mark" aria-hidden="true"></span></a>
+    <div class="hdr__start">
+      <a class="hdr__logo" href="index.html" aria-label="EE Studio, forsiden"><span class="mark" aria-hidden="true"></span></a>
+      <a class="back" href="index.html" data-back><span class="back__arr" aria-hidden="true"></span><span class="back__txt">Tilbake</span></a>
+    </div>
     <nav class="hdr__nav" aria-label="Hovedmeny">
       <div class="hdr__item" data-nav="arbeid"><a class="link" href="arbeid.html">Arbeid</a></div>
       <div class="hdr__item" data-nav="tjenester"><a class="link" href="design.html">Tjenester</a>
@@ -28,23 +33,26 @@
       <div class="hdr__item" data-nav="priser"><a class="link" href="priser.html">Priser</a></div>
     </nav>
     <div class="hdr__end">
-      <a class="hdr__cta link" href="kontakt.html"><span class="dot" aria-hidden="true"></span>Ta kontakt</a>
-      <button class="burger" type="button" aria-expanded="false" aria-controls="menu">Meny</button>
+      <a class="lang" href="en/index.html" data-lang hreflang="en" aria-label="Switch to English"><span class="is-on">NO</span><span class="">EN</span></a>
+      <a class="cta-pill hdr__cta" href="kontakt.html">Ta kontakt</a>
+      <button class="burger" type="button" aria-expanded="false" aria-controls="menu"><span></span><span></span><b class="sr-only">Meny</b></button>
     </div>
   </div>
 </header>
 
 <div class="menu" id="menu" aria-hidden="true">
   <nav aria-label="Meny">
-    <a class="menu__big" href="design.html">Design</a>
-    <a class="menu__big" href="foto.html">Foto</a>
-    <a class="menu__big" href="arbeid.html">Arbeid</a>
-    <a class="menu__big" href="om-meg.html">Om meg</a>
-    <a class="menu__big" href="priser.html">Priser</a>
-    <a class="menu__big" href="blogg.html">Blogg</a>
-    <a class="menu__big" href="kontakt.html">Ta kontakt</a>
+    <a class="menu__big" href="design.html"><i>01</i>Design</a>
+    <a class="menu__big" href="foto.html"><i>02</i>Foto</a>
+    <a class="menu__big" href="arbeid.html"><i>03</i>Arbeid</a>
+    <a class="menu__big" href="om-meg.html"><i>04</i>Om meg</a>
+    <a class="menu__big" href="priser.html"><i>05</i>Priser</a>
+    <a class="menu__big" href="blogg.html"><i>06</i>Blogg</a>
   </nav>
-  <div class="menu__foot"><span>Sandnes og Stavanger</span><a href="mailto:elisabet@eestudio.no">elisabet@eestudio.no</a></div>
+  <div class="menu__foot">
+    <a class="cta-pill cta-pill--big" href="kontakt.html">Ta kontakt <span class="arrow" aria-hidden="true"></span></a>
+    <a class="lang" href="en/index.html" data-lang><span class="is-on">NO</span><span class="">EN</span></a>
+  </div>
 </div>
 
 <main id="main">
@@ -54,12 +62,13 @@
     <div class="lhero__slide" data-set="design" data-name="Bølgen, visuell identitet"><img src="assets/work/bolgen-2.webp" alt="Bølgen-bil ved sjøen" decoding="async"></div>
     <div class="lhero__slide" data-set="design" data-name="Jærenkaffiglede, adventskalender"><img src="assets/work/jaerenkaffiglede-1.webp" alt="Adventskalender i skogen" decoding="async"></div>
     <div class="lhero__slide" data-set="foto" data-name="Max og Eileen, bryllup"><img src="assets/work/max-eileen-2.webp" alt="Brudgom smiler" decoding="async"></div>
-    <div class="lhero__slide" data-set="design" data-name="Not so far from around us, utstilling"><img src="assets/work/not-so-far-2.webp" alt="Utstillingsplakat på vegg" decoding="async"></div>
+    <div class="lhero__slide" data-set="design" data-name="Not so far from around us, utstilling"><img src="assets/work/not-so-far-2.webp" alt="Utstillingsplakat" decoding="async"></div>
     <div class="lhero__slide" data-set="foto" data-name="Electrocompaniet, produktfoto"><img src="assets/work/electrocompaniet-1.webp" alt="Forsterker fra Electrocompaniet" decoding="async"></div>
   </div>
-  <div class="lhero__top"><span data-hero-cap>Sandnes Havneterminal, miljøfoto</span><span class="lhero__bars" data-hero-bars></span></div>
+  <div class="lhero__top"><span data-hero-cap></span><span class="lhero__bars" data-hero-bars></span></div>
   <div class="lhero__body">
     <div>
+      <p class="kicker kicker--light"><span class="dot"></span>Grafisk design og fotografi</p>
       <h1 class="lhero__title" data-split>Alle har en historie verdt å fortelle.</h1>
       <p class="lhero__sub" data-reveal>Grafisk designer og fotograf i Sandnes og Stavanger. Jeg hjelper deg å fortelle din.</p>
     </div>
@@ -75,24 +84,24 @@
   <figure class="floater floater--2"><img src="assets/work/bondenes-1-s.webp" alt="" loading="lazy"></figure>
   <figure class="floater floater--3"><img src="assets/work/portretter-1-s.webp" alt="" loading="lazy"></figure>
   <p class="statement__text">Jeg hjelper bedrifter og mennesker å bli sett, forstått og husket, gjennom design og fotografi.</p>
-  <div class="statement__meta"><span class="muted">Elisabet Edvardsen</span><span class="muted">Sandnes og Stavanger</span><a class="link" href="om-meg.html">Om meg <span class="arrow" aria-hidden="true"></span></a></div>
+  <div class="statement__meta"><span class="muted">Elisabet Edvardsen</span><span class="muted">Sandnes og Stavanger</span><a class="link link--accent" href="om-meg.html">Om meg <span class="arrow" aria-hidden="true"></span></a></div>
 </section>
 
 <section class="showcase" aria-label="Utvalgte prosjekter">
-  <div class="showcase__head"><p class="label">Utvalgt arbeid</p><a class="link small" href="arbeid.html">Alt arbeid <span class="arrow" aria-hidden="true"></span></a></div>
+  <div class="showcase__head"><p class="kicker"><span class="dot"></span>Utvalgt arbeid</p><a class="link small" href="arbeid.html">Alt arbeid <span class="arrow" aria-hidden="true"></span></a></div>
   <div class="stack">
-    <div class="stack__item"><a class="stack__card" href="prosjekt.html?p=bolgen" data-cursor="Se"><img src="assets/work/bolgen-1.webp" alt="Bølgen-bil i studio" loading="lazy"><div class="stack__title"><h2 class="t-xl">Bølgen</h2><p>Visuell identitet</p></div><div class="stack__meta"><span>01</span><span>Design, 2025</span></div></a></div>
-    <div class="stack__item"><a class="stack__card" href="prosjekt.html?p=havneterminalen" data-cursor="Se"><img src="assets/work/havneterminalen-2.webp" alt="Cruiseskip ved Sandnes Havneterminal" loading="lazy"><div class="stack__title"><h2 class="t-xl">Havneterminalen</h2><p>Miljøfotografi</p></div><div class="stack__meta"><span>02</span><span>Foto, 2025</span></div></a></div>
-    <div class="stack__item"><a class="stack__card" href="prosjekt.html?p=jaerenkaffiglede" data-cursor="Se"><img src="assets/work/jaerenkaffiglede-3.webp" alt="Adventskalender for Jærenkaffiglede" loading="lazy"><div class="stack__title"><h2 class="t-xl">Adventskalender</h2><p>Emballasje og illustrasjon</p></div><div class="stack__meta"><span>03</span><span>Design, 2025</span></div></a></div>
-    <div class="stack__item"><a class="stack__card" href="prosjekt.html?p=electrocompaniet" data-cursor="Se"><img src="assets/work/electrocompaniet-1.webp" alt="Produktfoto for Electrocompaniet" loading="lazy"><div class="stack__title"><h2 class="t-xl">Electrocompaniet</h2><p>Produktfotografi</p></div><div class="stack__meta"><span>04</span><span>Foto, 2025</span></div></a></div>
-    <div class="stack__item"><a class="stack__card" href="prosjekt.html?p=accenture-ons" data-cursor="Se"><img src="assets/work/accenture-ons-1.webp" alt="Accenture på ONS" loading="lazy"><div class="stack__title"><h2 class="t-xl">Accenture på ONS</h2><p>Event og konferanse</p></div><div class="stack__meta"><span>05</span><span>Foto, 2024</span></div></a></div>
-    <div class="stack__item"><a class="stack__card" href="prosjekt.html?p=max-eileen" data-cursor="Se"><img src="assets/work/max-eileen-2.webp" alt="Bryllup" loading="lazy"><div class="stack__title"><h2 class="t-xl">Max og Eileen</h2><p>Bryllup</p></div><div class="stack__meta"><span>06</span><span>Foto, 2025</span></div></a></div>
+    <div class="stack__item"><a class="stack__card" href="prosjekt.html?p=bolgen" data-cursor="Se"><img src="assets/work/bolgen-1.webp" alt="Bølgen-bil i studio" loading="lazy"><div class="stack__title"><h2 class="t-xl">Bølgen</h2><p>Visuell identitet</p></div><div class="stack__meta"><span class="stack__n">01</span><span>Design, 2025</span></div></a></div>
+    <div class="stack__item"><a class="stack__card" href="prosjekt.html?p=havneterminalen" data-cursor="Se"><img src="assets/work/havneterminalen-2.webp" alt="Cruiseskip ved Sandnes Havneterminal" loading="lazy"><div class="stack__title"><h2 class="t-xl">Havneterminalen</h2><p>Miljøfotografi</p></div><div class="stack__meta"><span class="stack__n">02</span><span>Foto, 2025</span></div></a></div>
+    <div class="stack__item"><a class="stack__card" href="prosjekt.html?p=jaerenkaffiglede" data-cursor="Se"><img src="assets/work/jaerenkaffiglede-3.webp" alt="Adventskalender for Jærenkaffiglede" loading="lazy"><div class="stack__title"><h2 class="t-xl">Adventskalender</h2><p>Emballasje og illustrasjon</p></div><div class="stack__meta"><span class="stack__n">03</span><span>Design, 2025</span></div></a></div>
+    <div class="stack__item"><a class="stack__card" href="prosjekt.html?p=electrocompaniet" data-cursor="Se"><img src="assets/work/electrocompaniet-1.webp" alt="Produktfoto for Electrocompaniet" loading="lazy"><div class="stack__title"><h2 class="t-xl">Electrocompaniet</h2><p>Produktfotografi</p></div><div class="stack__meta"><span class="stack__n">04</span><span>Foto, 2025</span></div></a></div>
+    <div class="stack__item"><a class="stack__card" href="prosjekt.html?p=accenture-ons" data-cursor="Se"><img src="assets/work/accenture-ons-1.webp" alt="Accenture på ONS" loading="lazy"><div class="stack__title"><h2 class="t-xl">Accenture på ONS</h2><p>Event og konferanse</p></div><div class="stack__meta"><span class="stack__n">05</span><span>Foto, 2024</span></div></a></div>
+    <div class="stack__item"><a class="stack__card" href="prosjekt.html?p=max-eileen" data-cursor="Se"><img src="assets/work/max-eileen-2.webp" alt="Bryllup" loading="lazy"><div class="stack__title"><h2 class="t-xl">Max og Eileen</h2><p>Bryllup</p></div><div class="stack__meta"><span class="stack__n">06</span><span>Foto, 2025</span></div></a></div>
   </div>
 </section>
 
 <section class="wrap paths" data-paths>
   <div class="paths__aside">
-    <p class="label">Tjenester</p>
+    <p class="kicker"><span class="dot"></span>Tjenester</p>
     <p class="prose">To spor, én rød tråd. Design og foto fra samme hånd gir et helhetlig uttrykk og én person å forholde seg til.</p>
     <div class="paths__img" data-paths-img>
       <img src="assets/work/bolgen-3-s.webp" alt="" loading="lazy">
@@ -117,34 +126,81 @@
 
 <section class="hgal" data-hgal aria-label="Kunder og prosjekter">
   <div class="hgal__head">
-    <div><p class="label">Kunder og prosjekter</p><h2 class="t-lg" style="margin-top:.6rem">Et utvalg av historiene</h2></div>
+    <div><p class="kicker"><span class="dot"></span>Kunder og prosjekter</p><h2 class="t-lg" style="margin-top:.6rem">Et utvalg av historiene</h2></div>
     <span class="hgal__count"><span data-hgal-cur>01</span> / <span data-hgal-total>12</span></span>
   </div>
   <div class="hgal__track" data-hgal-list="sandnes-havneterminal,accenture-ons,woodling,electrocompaniet,fomo-works,norsea,bondenes,pluggi,objektsikring,benedicte-isak,sart,tyee"></div>
   <div class="hgal__bar" aria-hidden="true"><span></span></div>
 </section>
+
+<section class="reviews" aria-label="Google-anmeldelser">
+  <div class="wrap reviews__head">
+    <div>
+      <p class="kicker"><span class="dot"></span>Hva kundene sier</p>
+      <h2 class="t-xl reviews__title" data-split>Ord fra dem jeg har jobbet med</h2>
+    </div>
+    <div class="reviews__score">
+      <span class="reviews__g" aria-hidden="true">G</span>
+      <div class="reviews__sum">
+        <span class="reviews__stars" aria-label="5 av 5 stjerner">★★★★★</span>
+        <span class="small">Google-anmeldelser</span>
+      </div>
+      <a class="cta-pill cta-pill--dark" href="#" data-review-link>Skriv en anmeldelse <span class="arrow" aria-hidden="true"></span></a>
+    </div>
+  </div>
+  <div class="reviews__track" data-drag tabindex="0" aria-label="Anmeldelser, sveip for flere">
+    <figure class="review review--salvie">
+      <span class="review__stars">★★★★★</span>
+      <blockquote>Elisabet forsto raskt hvem vi er. Den nye profilen føles gjenkjennelig, relevant og vår egen.</blockquote>
+      <figcaption><span class="review__av">K</span><span><b>Kundenavn</b><small>Visuell identitet</small></span><span class="review__tag">Eksempel</span></figcaption>
+    </figure>
+    <figure class="review review--aprikos">
+      <span class="review__stars">★★★★★</span>
+      <blockquote>Trygg og avslappet fotografering. Selv de som ikke liker kamera, fikk bilder de er stolte av.</blockquote>
+      <figcaption><span class="review__av">K</span><span><b>Kundenavn</b><small>Ansattfoto</small></span><span class="review__tag">Eksempel</span></figcaption>
+    </figure>
+    <figure class="review review--korall">
+      <span class="review__stars">★★★★★</span>
+      <blockquote>Vi fikk design og foto fra samme person, og alt henger sammen. Én rød tråd, helt fra start.</blockquote>
+      <figcaption><span class="review__av">K</span><span><b>Kundenavn</b><small>Design og foto</small></span><span class="review__tag">Eksempel</span></figcaption>
+    </figure>
+    <figure class="review review--stein">
+      <span class="review__stars">★★★★★</span>
+      <blockquote>Bildene fra bryllupet vårt er ekte og varme. Vi får frysninger hver gang vi ser dem.</blockquote>
+      <figcaption><span class="review__av">K</span><span><b>Kundenavn</b><small>Bryllup</small></span><span class="review__tag">Eksempel</span></figcaption>
+    </figure>
+  </div>
+  <p class="wrap small muted reviews__note">Eksempler. Erstattes med ekte anmeldelser fra Google Business-profilen ved lansering.</p>
+</section>
 </main>
 
+<section class="ctaband" aria-label="Kontakt">
+  <div class="ctaband__marquee" aria-hidden="true"><div class="ctaband__track"><span>La oss ta en prat ✦ Har du en historie å fortelle? ✦ </span><span>La oss ta en prat ✦ Har du en historie å fortelle? ✦ </span></div></div>
+  <div class="wrap ctaband__in">
+    <p class="ctaband__lead">Har du en historie å fortelle? Fortell meg om prosjektet, så tar vi det derfra.</p>
+    <a class="ctaband__btn" href="kontakt.html" data-magnet><span>La oss ta<br>en prat</span><span class="arrow" aria-hidden="true"></span></a>
+  </div>
+</section>
 <footer class="ftr" data-dark>
   <div class="wrap ftr__top">
-    <div class="ftr__cta">
-      <p class="t-lg">Har du en historie å fortelle?</p>
-      <a class="ftr__mail link" href="kontakt.html">La oss ta en prat <span class="arrow" aria-hidden="true"></span></a>
+    <div>
+      <span class="mark ftr__logo" aria-hidden="true"></span>
+      <p class="ftr__tag">Grafisk design og fotografi i Sandnes og Stavanger.</p>
+      <a class="ftr__mail link" href="mailto:elisabet@eestudio.no">elisabet@eestudio.no</a>
     </div>
     <div class="ftr__cols">
       <div><span class="label">Tjenester</span><ul><li><a class="link" href="design.html">Design</a></li><li><a class="link" href="foto.html">Foto</a></li><li><a class="link" href="priser.html">Priser</a></li></ul></div>
       <div><span class="label">Studio</span><ul><li><a class="link" href="arbeid.html">Arbeid</a></li><li><a class="link" href="om-meg.html">Om meg</a></li><li><a class="link" href="blogg.html">Blogg</a></li></ul></div>
-      <div><span class="label">Kontakt</span><ul><li><a class="link" href="mailto:elisabet@eestudio.no">E-post</a></li><li><a class="link" href="tel:+4748117215">+47 48 11 72 15</a></li><li><a class="link" href="#">Instagram</a></li><li><a class="link" href="#">LinkedIn</a></li></ul></div>
+      <div><span class="label">Kontakt</span><ul><li><a class="link" href="tel:+4748117215">+47 48 11 72 15</a></li><li><a class="link" href="#">Instagram</a></li><li><a class="link" href="#">LinkedIn</a></li></ul></div>
     </div>
   </div>
-  <div class="ftr__mark" aria-hidden="true"><span class="wordmark"></span></div>
-  <div class="ftr__bottom"><span>EE Studio, Elisabet Edvardsen. Org. nr. 922 966 192</span><span>Grafisk design og fotografi, Sandnes og Stavanger</span></div>
+  <div class="ftr__bottom"><span>EE Studio, Elisabet Edvardsen. Org. nr. 922 966 192</span><span>© <span data-year>2026</span></span></div>
 </footer>
 
 <script src="assets/vendor/gsap.min.js?v=47da594c" defer></script>
 <script src="assets/vendor/ScrollTrigger.min.js?v=ba1fa78e" defer></script>
 <script src="assets/vendor/lenis.min.js?v=79e3a064" defer></script>
-<script src="assets/js/data.js?v=058f98d9" defer></script>
-<script src="assets/js/main.js?v=45d23e04" defer></script>
+<script src="assets/js/data.js?v=7b2db8be" defer></script>
+<script src="assets/js/main.js?v=8d142527" defer></script>
 </body>
 </html>

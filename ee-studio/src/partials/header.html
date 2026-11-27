@@ -1,35 +1,41 @@
-<a class="skip" href="#main">Hopp til innhold</a>
+<a class="skip" href="#main">[[Hopp til innhold||Skip to content]]</a>
 <div class="veil" aria-hidden="true"></div>
 <div class="cursor" aria-hidden="true"><span></span></div>
 
 <header class="hdr" data-hdr>
   <div class="hdr__in">
-    <a class="hdr__logo" href="index.html" aria-label="EE Studio, forsiden"><span class="mark" aria-hidden="true"></span></a>
-    <nav class="hdr__nav" aria-label="Hovedmeny">
-      <div class="hdr__item" data-nav="arbeid"><a class="link" href="arbeid.html">Arbeid</a></div>
-      <div class="hdr__item" data-nav="tjenester"><a class="link" href="design.html">Tjenester</a>
-        <div class="hdr__sub"><a class="link" href="design.html">Design</a><a class="link" href="foto.html">Foto</a></div>
+    <div class="hdr__start">
+      <a class="hdr__logo" href="index.html" aria-label="[[EE Studio, forsiden||EE Studio, home]]"><span class="mark" aria-hidden="true"></span></a>
+      <a class="back" href="{{back_href}}" data-back><span class="back__arr" aria-hidden="true"></span><span class="back__txt">[[Tilbake||Back]]</span></a>
+    </div>
+    <nav class="hdr__nav" aria-label="[[Hovedmeny||Main menu]]">
+      <div class="hdr__item" data-nav="arbeid"><a class="link" href="arbeid.html">[[Arbeid||Work]]</a></div>
+      <div class="hdr__item" data-nav="tjenester"><a class="link" href="design.html">[[Tjenester||Services]]</a>
+        <div class="hdr__sub"><a class="link" href="design.html">Design</a><a class="link" href="foto.html">[[Foto||Photo]]</a></div>
       </div>
-      <div class="hdr__item" data-nav="om"><a class="link" href="om-meg.html">Om meg</a></div>
-      <div class="hdr__item" data-nav="blogg"><a class="link" href="blogg.html">Blogg</a></div>
-      <div class="hdr__item" data-nav="priser"><a class="link" href="priser.html">Priser</a></div>
+      <div class="hdr__item" data-nav="om"><a class="link" href="om-meg.html">[[Om meg||About]]</a></div>
+      <div class="hdr__item" data-nav="blogg"><a class="link" href="blogg.html">[[Blogg||Journal]]</a></div>
+      <div class="hdr__item" data-nav="priser"><a class="link" href="priser.html">[[Priser||Prices]]</a></div>
     </nav>
     <div class="hdr__end">
-      <a class="hdr__cta link" href="kontakt.html"><span class="dot" aria-hidden="true"></span>Ta kontakt</a>
-      <button class="burger" type="button" aria-expanded="false" aria-controls="menu">Meny</button>
+      <a class="lang" href="{{lang_href}}" data-lang hreflang="[[en||nb]]" aria-label="[[Switch to English||Bytt til norsk]]"><span class="[[is-on||]]">NO</span><span class="[[||is-on]]">EN</span></a>
+      <a class="cta-pill hdr__cta" href="kontakt.html">[[Ta kontakt||Get in touch]]</a>
+      <button class="burger" type="button" aria-expanded="false" aria-controls="menu"><span></span><span></span><b class="sr-only">[[Meny||Menu]]</b></button>
     </div>
   </div>
 </header>
 
 <div class="menu" id="menu" aria-hidden="true">
-  <nav aria-label="Meny">
-    <a class="menu__big" href="design.html">Design</a>
-    <a class="menu__big" href="foto.html">Foto</a>
-    <a class="menu__big" href="arbeid.html">Arbeid</a>
-    <a class="menu__big" href="om-meg.html">Om meg</a>
-    <a class="menu__big" href="priser.html">Priser</a>
-    <a class="menu__big" href="blogg.html">Blogg</a>
-    <a class="menu__big" href="kontakt.html">Ta kontakt</a>
+  <nav aria-label="[[Meny||Menu]]">
+    <a class="menu__big" href="design.html"><i>01</i>Design</a>
+    <a class="menu__big" href="foto.html"><i>02</i>[[Foto||Photo]]</a>
+    <a class="menu__big" href="arbeid.html"><i>03</i>[[Arbeid||Work]]</a>
+    <a class="menu__big" href="om-meg.html"><i>04</i>[[Om meg||About]]</a>
+    <a class="menu__big" href="priser.html"><i>05</i>[[Priser||Prices]]</a>
+    <a class="menu__big" href="blogg.html"><i>06</i>[[Blogg||Journal]]</a>
   </nav>
-  <div class="menu__foot"><span>Sandnes og Stavanger</span><a href="mailto:elisabet@eestudio.no">elisabet@eestudio.no</a></div>
+  <div class="menu__foot">
+    <a class="cta-pill cta-pill--big" href="kontakt.html">[[Ta kontakt||Get in touch]] <span class="arrow" aria-hidden="true"></span></a>
+    <a class="lang" href="{{lang_href}}" data-lang><span class="[[is-on||]]">NO</span><span class="[[||is-on]]">EN</span></a>
+  </div>
 </div>

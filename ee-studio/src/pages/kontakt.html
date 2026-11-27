@@ -1,28 +1,60 @@
-<!-- key: kontakt | title: Ta kontakt | desc: Ta kontakt med EE Studio for design og fotografi. -->
+<!-- key: kontakt | title: Ta kontakt~Get in touch | desc: Ta kontakt med EE Studio for design og fotografi.~Get in touch with EE Studio for design and photography. -->
 
-<header class="wrap phead">
-  <h1 class="t-xl" data-split>La oss ta en prat.</h1>
+<header class="wrap phead phead--tight">
+  <p class="kicker"><span class="dot"></span>[[Ta kontakt||Get in touch]]</p>
+  <h1 class="t-xl" data-split style="margin-top:1rem">[[La oss ta en prat.||Let's talk.]]</h1>
 </header>
+
 <section class="wrap contact">
-  <div style="display:grid;gap:var(--s-2);align-content:start">
-    <p class="prose">Fortell kort hva du trenger, så svarer jeg innen to virkedager.</p>
-    <a class="t-md link" href="mailto:elisabet@eestudio.no">elisabet@eestudio.no</a>
-    <a class="t-md link" href="tel:+4748117215">+47 48 11 72 15</a>
-  </div>
-  <form class="form" data-form novalidate>
-    <div class="field"><span class="label">Hva gjelder det?</span>
-      <div class="choices" style="margin-top:.6rem">
-        <label class="choice"><input type="radio" name="tema" value="design"><span>Design</span></label>
-        <label class="choice"><input type="radio" name="tema" value="foto"><span>Foto</span></label>
-        <label class="choice"><input type="radio" name="tema" value="begge" checked><span>Begge</span></label>
-      </div>
+  <form class="madlib" data-form novalidate>
+    <p class="madlib__p">
+      [[Hei Elisabet! Jeg heter||Hi Elisabet! My name is]]
+      <label class="ml"><span class="sr-only">[[Navn||Name]]</span><input name="navn" required autocomplete="name" placeholder="[[ditt navn||your name]]" data-grow></label>
+      [[og jobber i||and I work at]]
+      <label class="ml"><span class="sr-only">[[Bedrift||Company]]</span><input name="firma" autocomplete="organization" placeholder="[[bedrift (valgfritt)||company (optional)]]" data-grow></label>.
+    </p>
+    <p class="madlib__p">
+      [[Jeg trenger hjelp med||I need help with]]
+      <span class="ml-chips">
+        <label class="mlc"><input type="radio" name="tema" value="design"><span>design</span></label>
+        <label class="mlc"><input type="radio" name="tema" value="foto"><span>[[foto||photography]]</span></label>
+        <label class="mlc"><input type="radio" name="tema" value="begge" checked><span>[[begge deler||both]]</span></label>
+      </span>
+    </p>
+    <p class="madlib__p">
+      [[Kort fortalt handler det om||In short, it's about]]
+      <label class="ml ml--wide"><span class="sr-only">[[Om prosjektet||About the project]]</span><input name="melding" required placeholder="[[nye ansattbilder, en ny logo, et bryllup ...||new staff photos, a new logo, a wedding ...]]" data-grow></label>.
+    </p>
+    <p class="madlib__p">
+      [[Budsjettet er omtrent||The budget is roughly]]
+      <span class="ml-chips">
+        <label class="mlc"><input type="radio" name="budsjett" value="u10"><span>[[under 10k||under 10k]]</span></label>
+        <label class="mlc"><input type="radio" name="budsjett" value="10-30"><span>10–30k</span></label>
+        <label class="mlc"><input type="radio" name="budsjett" value="30-60"><span>30–60k</span></label>
+        <label class="mlc"><input type="radio" name="budsjett" value="60"><span>60k+</span></label>
+        <label class="mlc"><input type="radio" name="budsjett" value="usikker" checked><span>[[vet ikke ennå||not sure yet]]</span></label>
+      </span>
+    </p>
+    <p class="madlib__p">
+      [[Du når meg på||You can reach me at]]
+      <label class="ml"><span class="sr-only">[[E-post||Email]]</span><input name="epost" type="email" required autocomplete="email" placeholder="[[e-post||email]]" data-grow></label>.
+    </p>
+    <div class="madlib__foot">
+      <button class="send" type="submit" data-magnet><span>[[Send||Send]]</span><span class="arrow" aria-hidden="true"></span></button>
+      <p class="small muted">[[Jeg svarer innen to virkedager. Opplysningene brukes kun til å svare deg.||I reply within two working days. Your details are only used to reply to you.]]</p>
     </div>
-    <div class="row2">
-      <div class="field"><label for="navn">Navn</label><input id="navn" name="navn" required autocomplete="name"></div>
-      <div class="field"><label for="epost">E-post</label><input id="epost" name="epost" type="email" required autocomplete="email"></div>
+    <div class="madlib__ok" role="status" tabindex="-1">
+      <span class="sticker sticker--static" aria-hidden="true"><i>✦</i></span>
+      <p class="t-xl">[[Takk||Thank you]]<span data-thanks-name></span>!</p>
+      <p class="prose">[[Meldingen er sendt. Jeg tar kontakt innen to virkedager.||Your message is on its way. I'll be in touch within two working days.]]</p>
     </div>
-    <div class="field"><label for="melding">Om prosjektet</label><textarea id="melding" name="melding" required></textarea></div>
-    <div><button class="pill pill--fill" type="submit">Send <span class="arrow" aria-hidden="true"></span></button></div>
-    <div class="form__ok" role="status"><p class="t-lg">Takk. Jeg svarer innen to virkedager.</p></div>
   </form>
+
+  <aside class="ccard">
+    <figure class="ccard__img"><img src="assets/work/elisabet.webp" alt="Elisabet Edvardsen" loading="lazy"></figure>
+    <p class="label" style="color:inherit;opacity:.7">[[Direkte||Direct]]</p>
+    <a class="ccard__big" href="mailto:elisabet@eestudio.no">elisabet@eestudio.no</a>
+    <a class="ccard__big" href="tel:+4748117215">+47 48 11 72 15</a>
+    <p class="small">Sandnes [[og||and]] Stavanger. [[Oppdrag i hele Norge.||Work across Norway.]]</p>
+  </aside>
 </section>

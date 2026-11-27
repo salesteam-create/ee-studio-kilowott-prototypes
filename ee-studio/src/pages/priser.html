@@ -1,42 +1,110 @@
-<!-- key: priser | title: Priser | desc: Startpriser for fotografering og design. Alle pakker tilpasses ditt behov. -->
+<!-- key: priser | title: Priser~Prices | desc: Startpriser for fotografering og design. Alle pakker tilpasses ditt behov.~Starting prices for photography and design. Every package can be tailored to you. -->
 
 <header class="wrap phead">
   <div class="phead__grid">
-    <h1 class="t-xl" data-split>Priser</h1>
-    <p class="prose" data-reveal>Her ser du hvor prisene starter. Alle oppdrag er forskjellige, og du får alltid et tilbud før vi setter i gang.</p>
+    <h1 class="t-xl" data-split>[[Pakker som passer din historie.||Packages that fit your story.]]</h1>
+    <p class="prose" data-reveal>[[Her ser du hvor prisene starter. Alle oppdrag er forskjellige, og du får alltid et tilbud før vi setter i gang.||Here's where prices start. Every project is different, and you always get a quote before we begin.]]</p>
   </div>
 </header>
 
-<section class="wrap pricing">
-  <aside class="pricing__aside">
-    <p class="small muted">Priser for bedrifter er eks. mva. Priser for privatpersoner er inkl. mva.</p>
-    <a class="pill pill--fill" href="kontakt.html" style="justify-self:start">Be om tilbud <span class="arrow" aria-hidden="true"></span></a>
-  </aside>
-  <div>
-    <div class="pgroup">
-      <h2 class="label">Foto, bedrift</h2>
-      <div class="prow"><span class="prow__name">Første inntrykket</span><span class="small muted">Portretter av ansatte, enkel lyssetting, bilder i høy kvalitet.</span><span class="prow__price"><small>fra</small>7 900 kr</span></div>
-      <div class="prow"><span class="prow__name">Historien</span><span class="small muted">Planleggingsmøte, fire timers fotografering, portretter og miljø. Innhold til nettside og SoMe.</span><span class="prow__price"><small>fra</small>20 900 kr</span></div>
-      <div class="prow"><span class="prow__name">Merkevare i full blomst</span><span class="small muted">Heldagsfotografering: portretter, miljø og produkt. Prioritert levering.</span><span class="prow__price"><small>fra</small>39 900 kr</span></div>
+<section class="wrap prices" data-tabs>
+  <div class="ptabs" role="tablist" aria-label="[[Velg type||Choose type]]">
+    <button class="ptab" role="tab" data-tab="foto-bedrift" aria-selected="true"><span class="ptab__k">[[Foto||Photo]]</span>[[Bedrift||Business]]</button>
+    <button class="ptab" role="tab" data-tab="foto-privat" aria-selected="false"><span class="ptab__k">[[Foto||Photo]]</span>[[Privat||Private]]</button>
+    <button class="ptab" role="tab" data-tab="design" aria-selected="false"><span class="ptab__k">[[Merkevare||Brand]]</span>Design</button>
+  </div>
+
+  <div class="pkgs" role="tabpanel" data-panel="foto-bedrift">
+    <article class="pkg pkg--salvie">
+      <p class="pkg__k">[[Portrettpakke||Portrait package]]</p>
+      <h2 class="pkg__name">[[Første inntrykket||First impression]]</h2>
+      <p class="pkg__price"><small>[[fra||from]]</small><b>7 900</b><small>kr</small></p>
+      <ul><li>[[Portretter av ansatte||Staff portraits]]</li><li>[[Planlegging||Planning]]</li><li>[[Enkel lyssetting||Simple lighting]]</li><li>[[Bilder i høy kvalitet||High-resolution images]]</li></ul>
+      <a class="pkg__btn" href="kontakt.html?tema=foto">[[Velg pakken||Choose package]] <span class="arrow" aria-hidden="true"></span></a>
+    </article>
+    <article class="pkg pkg--korall">
+      <span class="sticker" aria-hidden="true"><svg viewBox="0 0 100 100"><defs><path id="c1" d="M50,50 m-38,0 a38,38 0 1,1 76,0 a38,38 0 1,1 -76,0"/></defs><text><textPath href="#c1">[[MEST VALGT ✦ MEST VALGT ✦||MOST POPULAR ✦ MOST POPULAR ✦]]</textPath></text></svg><i>✦</i></span>
+      <p class="pkg__k">[[Bedriftspakke||Business package]]</p>
+      <h2 class="pkg__name">[[Historien||The story]]</h2>
+      <p class="pkg__price"><small>[[fra||from]]</small><b>20 900</b><small>kr</small></p>
+      <ul><li>[[Planleggingsmøte||Planning meeting]]</li><li>[[4 timers fotografering||4-hour shoot]]</li><li>[[Portretter og miljøbilder||Portraits and environmental]]</li><li>[[Innhold til nettside og SoMe||Content for web and social]]</li></ul>
+      <a class="pkg__btn" href="kontakt.html?tema=foto">[[Velg pakken||Choose package]] <span class="arrow" aria-hidden="true"></span></a>
+    </article>
+    <article class="pkg pkg--aprikos">
+      <p class="pkg__k">[[Bedriftspakke||Business package]]</p>
+      <h2 class="pkg__name">[[Merkevare i full blomst||Brand in full bloom]]</h2>
+      <p class="pkg__price"><small>[[fra||from]]</small><b>39 900</b><small>kr</small></p>
+      <ul><li>[[Kreativ planlegging||Creative planning]]</li><li>[[Heldags fotografering||Full-day shoot]]</li><li>[[Portretter, miljø og produkt||Portraits, environmental and product]]</li><li>[[Prioritert levering||Priority delivery]]</li></ul>
+      <a class="pkg__btn" href="kontakt.html?tema=foto">[[Velg pakken||Choose package]] <span class="arrow" aria-hidden="true"></span></a>
+    </article>
+  </div>
+
+  <div class="pkgs" role="tabpanel" data-panel="foto-privat" hidden>
+    <article class="pkg pkg--stein">
+      <p class="pkg__k">[[Portrett||Portrait]]</p>
+      <h2 class="pkg__name">[[Bare deg||Just you]]</h2>
+      <p class="pkg__price"><small>[[fra||from]]</small><b>2 900</b><small>kr</small></p>
+      <ul><li>[[Profilbilde eller personlig portrett||Profile or personal portrait]]</li><li>[[Studio eller ute||Studio or outdoors]]</li><li>[[5 redigerte bilder||5 edited images]]</li></ul>
+      <a class="pkg__btn" href="kontakt.html?tema=foto">[[Velg pakken||Choose package]] <span class="arrow" aria-hidden="true"></span></a>
+    </article>
+    <article class="pkg pkg--salvie">
+      <p class="pkg__k">[[Par og familie||Couples and family]]</p>
+      <h2 class="pkg__name">[[Sammen||Together]]</h2>
+      <p class="pkg__price"><small>[[fra||from]]</small><b>3 900</b><small>kr</small></p>
+      <ul><li>[[Naturlige bilder på et sted som betyr noe||Natural pictures in a place that matters]]</li><li>[[Opptil 1 time||Up to 1 hour]]</li><li>[[15 redigerte bilder||15 edited images]]</li></ul>
+      <a class="pkg__btn" href="kontakt.html?tema=foto">[[Velg pakken||Choose package]] <span class="arrow" aria-hidden="true"></span></a>
+    </article>
+    <article class="pkg pkg--korall">
+      <span class="sticker" aria-hidden="true"><svg viewBox="0 0 100 100"><defs><path id="c2" d="M50,50 m-38,0 a38,38 0 1,1 76,0 a38,38 0 1,1 -76,0"/></defs><text><textPath href="#c2">[[MEST VALGT ✦ MEST VALGT ✦||MOST POPULAR ✦ MOST POPULAR ✦]]</textPath></text></svg><i>✦</i></span>
+      <p class="pkg__k">[[Bryllup||Wedding]]</p>
+      <h2 class="pkg__name">[[Begynnelsen||The beginning]]</h2>
+      <p class="pkg__price"><small>[[fra||from]]</small><b>14 900</b><small>kr</small></p>
+      <ul><li>[[Vielse og portretter||Ceremony and portraits]]</li><li>[[De viktigste øyeblikkene||The key moments]]</li><li>[[Nettgalleri å dele||Online gallery to share]]</li></ul>
+      <a class="pkg__btn" href="kontakt.html?tema=foto">[[Velg pakken||Choose package]] <span class="arrow" aria-hidden="true"></span></a>
+    </article>
+  </div>
+
+  <div class="pkgs" role="tabpanel" data-panel="design" hidden>
+    <article class="pkg pkg--stein">
+      <p class="pkg__k">[[Enkeltoppdrag||Single jobs]]</p>
+      <h2 class="pkg__name">[[Grafisk design||Graphic design]]</h2>
+      <p class="pkg__price"><small>[[fra||from]]</small><b>1 100</b><small>[[kr/t||kr/h]]</small></p>
+      <ul><li>[[Trykksaker og presentasjoner||Print and presentations]]</li><li>[[SoMe-maler||Social media templates]]</li><li>[[Justeringer og oppdateringer||Updates and adjustments]]</li></ul>
+      <a class="pkg__btn" href="kontakt.html?tema=design">[[Ta kontakt||Get in touch]] <span class="arrow" aria-hidden="true"></span></a>
+    </article>
+    <article class="pkg pkg--skog">
+      <span class="sticker sticker--salvie" aria-hidden="true"><svg viewBox="0 0 100 100"><defs><path id="c3" d="M50,50 m-38,0 a38,38 0 1,1 76,0 a38,38 0 1,1 -76,0"/></defs><text><textPath href="#c3">[[MEST VALGT ✦ MEST VALGT ✦||MOST POPULAR ✦ MOST POPULAR ✦]]</textPath></text></svg><i>✦</i></span>
+      <p class="pkg__k">[[Grunnmur-pakken||The Foundation]]</p>
+      <h2 class="pkg__name">[[Hele fundamentet||The whole foundation]]</h2>
+      <p class="pkg__price"><small>[[fra||from]]</small><b>49 900</b><small>kr</small></p>
+      <ul><li>[[Strategiworkshop||Strategy workshop]]</li><li>Logo</li><li>[[Visuell identitet og profilmanual||Visual identity and guidelines]]</li></ul>
+      <a class="pkg__btn" href="kontakt.html?tema=design">[[Velg pakken||Choose package]] <span class="arrow" aria-hidden="true"></span></a>
+    </article>
+    <article class="pkg pkg--fersken">
+      <p class="pkg__k">[[Merke||Mark]]</p>
+      <h2 class="pkg__name">Logo</h2>
+      <p class="pkg__price"><small>[[fra||from]]</small><b>14 900</b><small>kr</small></p>
+      <ul><li>[[Konsept og skisser||Concept and sketches]]</li><li>[[Logo i alle formater||Logo in all formats]]</li><li>[[Enkel bruksveiledning||Simple usage guide]]</li></ul>
+      <a class="pkg__btn" href="kontakt.html?tema=design">[[Velg pakken||Choose package]] <span class="arrow" aria-hidden="true"></span></a>
+    </article>
+  </div>
+
+  <div class="custom">
+    <div>
+      <p class="kicker kicker--light"><span class="dot"></span>[[Skreddersydd||Tailor-made]]</p>
+      <p class="t-lg" style="margin-top:.8rem">[[Ingenting som passer helt? Jeg setter sammen en pakke for deg.||Nothing quite fits? I'll put together a package for you.]]</p>
     </div>
-    <div class="pgroup">
-      <h2 class="label">Foto, privat</h2>
-      <div class="prow"><span class="prow__name">Portrett</span><span class="small muted">Profilbilde eller personlig portrett.</span><span class="prow__price"><small>fra</small>2 900 kr</span></div>
-      <div class="prow"><span class="prow__name">Par og familie</span><span class="small muted">Naturlige bilder på et sted som betyr noe.</span><span class="prow__price"><small>fra</small>3 900 kr</span></div>
-      <div class="prow"><span class="prow__name">Bryllup, Begynnelsen</span><span class="small muted">Vielse, portretter og de viktigste øyeblikkene.</span><span class="prow__price"><small>fra</small>14 900 kr</span></div>
-    </div>
-    <div class="pgroup">
-      <h2 class="label">Design</h2>
-      <div class="prow"><span class="prow__name">Grunnmur-pakken</span><span class="small muted">Strategiworkshop, logo og visuell identitet.</span><span class="prow__price"><small>fra</small>49 900 kr</span></div>
-      <div class="prow"><span class="prow__name">Logo</span><span class="small muted">Logo i alle formater med bruksveiledning.</span><span class="prow__price"><small>fra</small>14 900 kr</span></div>
-      <div class="prow"><span class="prow__name">Grafisk design</span><span class="small muted">Trykksaker, presentasjoner og maler.</span><span class="prow__price"><small>fra</small>1 100 kr/t</span></div>
-    </div>
-    <div class="pgroup faq">
-      <h2 class="label">Spørsmål</h2>
-      <details><summary>Hvorfor står det «fra»?</summary><p>Startprisen viser hvor det begynner. Jeg tilpasser pakken etter hva du trenger.</p></details>
-      <details><summary>Hvordan booker jeg?</summary><p>Send en melding, så tar vi en uforpliktende prat om behov, sted og tidspunkt.</p></details>
-      <details><summary>Kan vi velge lokasjon selv?</summary><p>Ja. I studio, på arbeidsplassen eller et sted som betyr noe for deg.</p></details>
-      <details><summary>Når får vi bildene?</summary><p>Normalt innen to uker. Med prioritert levering går det raskere.</p></details>
-    </div>
+    <a class="cta-pill cta-pill--big" href="kontakt.html">[[Be om tilbud||Ask for a quote]] <span class="arrow" aria-hidden="true"></span></a>
+  </div>
+  <p class="small muted" style="margin-top:1rem">[[Priser for bedrifter er eks. mva. Priser for privatpersoner er inkl. mva.||Business prices exclude VAT. Private prices include VAT.]]</p>
+</section>
+
+<section class="wrap faq-wrap">
+  <h2 class="t-lg">[[Ofte stilte spørsmål||Frequently asked]]</h2>
+  <div class="faq">
+    <details><summary>[[Hvorfor står det «fra»?||Why does it say "from"?]]</summary><p>[[Startprisen viser hvor det begynner. Jeg tilpasser pakken etter hva du trenger.||The starting price shows where it begins. I tailor the package to what you need.]]</p></details>
+    <details><summary>[[Hvordan booker jeg?||How do I book?]]</summary><p>[[Send en melding, så tar vi en uforpliktende prat om behov, sted og tidspunkt.||Send a message and we'll have a no-obligation chat about needs, place and timing.]]</p></details>
+    <details><summary>[[Kan vi velge lokasjon selv?||Can we choose the location?]]</summary><p>[[Ja. I studio, på arbeidsplassen eller et sted som betyr noe for deg.||Yes. In the studio, at your workplace or somewhere that matters to you.]]</p></details>
+    <details><summary>[[Når får vi bildene?||When do we get the pictures?]]</summary><p>[[Normalt innen to uker. Med prioritert levering går det raskere.||Normally within two weeks. Priority delivery is faster.]]</p></details>
   </div>
 </section>

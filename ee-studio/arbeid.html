@@ -1,14 +1,16 @@
 <!doctype html>
-<html lang="nb">
+<html lang="nb" data-base="">
 <head>
 <meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
 <title>Arbeid | EE Studio</title>
 <meta name="description" content="Utvalgte prosjekter innen grafisk design og fotografi.">
 <meta name="theme-color" content="#FAF8F5">
+<link rel="alternate" hreflang="nb" href="arbeid.html">
+<link rel="alternate" hreflang="en" href="en/arbeid.html">
 <link rel="icon" href="assets/img/eemark.png" type="image/png">
 <link rel="preload" href="assets/fonts/anton.woff2" as="font" type="font/woff2" crossorigin>
-<link rel="stylesheet" href="assets/css/main.css?v=ed46946d">
+<link rel="stylesheet" href="assets/css/main.css?v=47c95ccc">
 </head>
 <body data-page="arbeid" data-theme="light" class="is-loading">
 <a class="skip" href="#main">Hopp til innhold</a>
@@ -17,7 +19,10 @@
 
 <header class="hdr" data-hdr>
   <div class="hdr__in">
-    <a class="hdr__logo" href="index.html" aria-label="EE Studio, forsiden"><span class="mark" aria-hidden="true"></span></a>
+    <div class="hdr__start">
+      <a class="hdr__logo" href="index.html" aria-label="EE Studio, forsiden"><span class="mark" aria-hidden="true"></span></a>
+      <a class="back" href="index.html" data-back><span class="back__arr" aria-hidden="true"></span><span class="back__txt">Tilbake</span></a>
+    </div>
     <nav class="hdr__nav" aria-label="Hovedmeny">
       <div class="hdr__item" data-nav="arbeid" aria-current="page"><a class="link" href="arbeid.html">Arbeid</a></div>
       <div class="hdr__item" data-nav="tjenester"><a class="link" href="design.html">Tjenester</a>
@@ -28,23 +33,26 @@
       <div class="hdr__item" data-nav="priser"><a class="link" href="priser.html">Priser</a></div>
     </nav>
     <div class="hdr__end">
-      <a class="hdr__cta link" href="kontakt.html"><span class="dot" aria-hidden="true"></span>Ta kontakt</a>
-      <button class="burger" type="button" aria-expanded="false" aria-controls="menu">Meny</button>
+      <a class="lang" href="en/arbeid.html" data-lang hreflang="en" aria-label="Switch to English"><span class="is-on">NO</span><span class="">EN</span></a>
+      <a class="cta-pill hdr__cta" href="kontakt.html">Ta kontakt</a>
+      <button class="burger" type="button" aria-expanded="false" aria-controls="menu"><span></span><span></span><b class="sr-only">Meny</b></button>
     </div>
   </div>
 </header>
 
 <div class="menu" id="menu" aria-hidden="true">
   <nav aria-label="Meny">
-    <a class="menu__big" href="design.html">Design</a>
-    <a class="menu__big" href="foto.html">Foto</a>
-    <a class="menu__big" href="arbeid.html">Arbeid</a>
-    <a class="menu__big" href="om-meg.html">Om meg</a>
-    <a class="menu__big" href="priser.html">Priser</a>
-    <a class="menu__big" href="blogg.html">Blogg</a>
-    <a class="menu__big" href="kontakt.html">Ta kontakt</a>
+    <a class="menu__big" href="design.html"><i>01</i>Design</a>
+    <a class="menu__big" href="foto.html"><i>02</i>Foto</a>
+    <a class="menu__big" href="arbeid.html"><i>03</i>Arbeid</a>
+    <a class="menu__big" href="om-meg.html"><i>04</i>Om meg</a>
+    <a class="menu__big" href="priser.html"><i>05</i>Priser</a>
+    <a class="menu__big" href="blogg.html"><i>06</i>Blogg</a>
   </nav>
-  <div class="menu__foot"><span>Sandnes og Stavanger</span><a href="mailto:elisabet@eestudio.no">elisabet@eestudio.no</a></div>
+  <div class="menu__foot">
+    <a class="cta-pill cta-pill--big" href="kontakt.html">Ta kontakt <span class="arrow" aria-hidden="true"></span></a>
+    <a class="lang" href="en/arbeid.html" data-lang><span class="is-on">NO</span><span class="">EN</span></a>
+  </div>
 </div>
 
 <main id="main">
@@ -68,26 +76,33 @@
 </section>
 </main>
 
+<section class="ctaband" aria-label="Kontakt">
+  <div class="ctaband__marquee" aria-hidden="true"><div class="ctaband__track"><span>La oss ta en prat ✦ Har du en historie å fortelle? ✦ </span><span>La oss ta en prat ✦ Har du en historie å fortelle? ✦ </span></div></div>
+  <div class="wrap ctaband__in">
+    <p class="ctaband__lead">Har du en historie å fortelle? Fortell meg om prosjektet, så tar vi det derfra.</p>
+    <a class="ctaband__btn" href="kontakt.html" data-magnet><span>La oss ta<br>en prat</span><span class="arrow" aria-hidden="true"></span></a>
+  </div>
+</section>
 <footer class="ftr" data-dark>
   <div class="wrap ftr__top">
-    <div class="ftr__cta">
-      <p class="t-lg">Har du en historie å fortelle?</p>
-      <a class="ftr__mail link" href="kontakt.html">La oss ta en prat <span class="arrow" aria-hidden="true"></span></a>
+    <div>
+      <span class="mark ftr__logo" aria-hidden="true"></span>
+      <p class="ftr__tag">Grafisk design og fotografi i Sandnes og Stavanger.</p>
+      <a class="ftr__mail link" href="mailto:elisabet@eestudio.no">elisabet@eestudio.no</a>
     </div>
     <div class="ftr__cols">
       <div><span class="label">Tjenester</span><ul><li><a class="link" href="design.html">Design</a></li><li><a class="link" href="foto.html">Foto</a></li><li><a class="link" href="priser.html">Priser</a></li></ul></div>
       <div><span class="label">Studio</span><ul><li><a class="link" href="arbeid.html">Arbeid</a></li><li><a class="link" href="om-meg.html">Om meg</a></li><li><a class="link" href="blogg.html">Blogg</a></li></ul></div>
-      <div><span class="label">Kontakt</span><ul><li><a class="link" href="mailto:elisabet@eestudio.no">E-post</a></li><li><a class="link" href="tel:+4748117215">+47 48 11 72 15</a></li><li><a class="link" href="#">Instagram</a></li><li><a class="link" href="#">LinkedIn</a></li></ul></div>
+      <div><span class="label">Kontakt</span><ul><li><a class="link" href="tel:+4748117215">+47 48 11 72 15</a></li><li><a class="link" href="#">Instagram</a></li><li><a class="link" href="#">LinkedIn</a></li></ul></div>
     </div>
   </div>
-  <div class="ftr__mark" aria-hidden="true"><span class="wordmark"></span></div>
-  <div class="ftr__bottom"><span>EE Studio, Elisabet Edvardsen. Org. nr. 922 966 192</span><span>Grafisk design og fotografi, Sandnes og Stavanger</span></div>
+  <div class="ftr__bottom"><span>EE Studio, Elisabet Edvardsen. Org. nr. 922 966 192</span><span>© <span data-year>2026</span></span></div>
 </footer>
 
 <script src="assets/vendor/gsap.min.js?v=47da594c" defer></script>
 <script src="assets/vendor/ScrollTrigger.min.js?v=ba1fa78e" defer></script>
 <script src="assets/vendor/lenis.min.js?v=79e3a064" defer></script>
-<script src="assets/js/data.js?v=058f98d9" defer></script>
-<script src="assets/js/main.js?v=45d23e04" defer></script>
+<script src="assets/js/data.js?v=7b2db8be" defer></script>
+<script src="assets/js/main.js?v=8d142527" defer></script>
 </body>
 </html>

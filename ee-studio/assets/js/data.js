@@ -52,7 +52,11 @@ window.EE_PROJECTS = [
     "h": 1080
    }
   ],
-  "desc": "En visuell identitet like levende som bølgene den er oppkalt etter. Logo, farger, maler og bildekor i ett system."
+  "desc": "En visuell identitet like levende som bølgene den er oppkalt etter. Logo, farger, maler og bildekor i ett system.",
+  "cat_en": "Visual identity",
+  "title_en": "Bølgen",
+  "client_en": "Bølgen Media",
+  "desc_en": "A visual identity as lively as the waves it is named after. Logo, colours, templates and vehicle wrap in one system."
  },
  {
   "slug": "jaerenkaffiglede",
@@ -105,7 +109,11 @@ window.EE_PROJECTS = [
     "h": 1128
    }
   ],
-  "desc": "Adventskalender med håndtegnede illustrasjoner, der hver luke er en liten fortelling om kaffe og jul."
+  "desc": "Adventskalender med håndtegnede illustrasjoner, der hver luke er en liten fortelling om kaffe og jul.",
+  "cat_en": "Packaging",
+  "title_en": "Advent calendar",
+  "client_en": "Jærenkaffiglede",
+  "desc_en": "An advent calendar with hand-drawn illustrations, where every door is a small story about coffee and Christmas."
  },
  {
   "slug": "sandnes-havneterminal",
@@ -158,7 +166,11 @@ window.EE_PROJECTS = [
     "h": 1280
    }
   ],
-  "desc": "Ny identitet for havna: et robust symbol som fungerer like godt på en arbeidsjakke som på et cruiseskip."
+  "desc": "Ny identitet for havna: et robust symbol som fungerer like godt på en arbeidsjakke som på et cruiseskip.",
+  "cat_en": "Visual identity",
+  "title_en": "Sandnes Havneterminal",
+  "client_en": "Sandnes Havneterminal",
+  "desc_en": "A new identity for the harbour: a robust symbol that works as well on a work jacket as on a cruise ship."
  },
  {
   "slug": "not-so-far",
@@ -205,7 +217,11 @@ window.EE_PROJECTS = [
     "h": 1335
    }
   ],
-  "desc": "Utstilling og trykksaker for et prosjekt om det nære og det globale. Gul, grønn og høylytt."
+  "desc": "Utstilling og trykksaker for et prosjekt om det nære og det globale. Gul, grønn og høylytt.",
+  "cat_en": "Exhibition design",
+  "title_en": "Not so far from around us",
+  "client_en": "Exhibition",
+  "desc_en": "Exhibition and print for a project about the near and the global. Yellow, green and loud."
  },
  {
   "slug": "ma-exhibition",
@@ -246,7 +262,11 @@ window.EE_PROJECTS = [
     "h": 1333
    }
   ],
-  "desc": "Grafisk profil og romdesign for masterutstillingen ved Universitetet i Bergen."
+  "desc": "Grafisk profil og romdesign for masterutstillingen ved Universitetet i Bergen.",
+  "cat_en": "Exhibition design",
+  "title_en": "MA Design Exhibition",
+  "client_en": "University of Bergen",
+  "desc_en": "Graphic identity and spatial design for the master's exhibition at the University of Bergen."
  },
  {
   "slug": "otd-energy",
@@ -281,7 +301,11 @@ window.EE_PROJECTS = [
     "h": 1125
    }
   ],
-  "desc": "Standdesign for Offshore Technology Days. Et åpent rom som inviterer til samtale."
+  "desc": "Standdesign for Offshore Technology Days. Et åpent rom som inviterer til samtale.",
+  "cat_en": "Stand design",
+  "title_en": "OTD Energy",
+  "client_en": "Stahl Tranberg",
+  "desc_en": "Stand design for Offshore Technology Days. An open space that invites conversation."
  },
  {
   "slug": "beyond-sight",
@@ -310,7 +334,11 @@ window.EE_PROJECTS = [
     "h": 2000
    }
   ],
-  "desc": "Utstillingsdesign om å oppleve verden uten synet."
+  "desc": "Utstillingsdesign om å oppleve verden uten synet.",
+  "cat_en": "Exhibition design",
+  "title_en": "Beyond Sight",
+  "client_en": "Exhibition",
+  "desc_en": "Exhibition design about experiencing the world without sight."
  },
  {
   "slug": "fomo-works",
@@ -363,7 +391,11 @@ window.EE_PROJECTS = [
     "h": 1336
    }
   ],
-  "desc": "Prospekter og trykksaker for FOMO Works, med et rolig, mørkt og eksklusivt uttrykk."
+  "desc": "Prospekter og trykksaker for FOMO Works, med et rolig, mørkt og eksklusivt uttrykk.",
+  "cat_en": "Print",
+  "title_en": "FOMO Works",
+  "client_en": "FOMO Works",
+  "desc_en": "Prospectuses and print for FOMO Works, with a calm, dark and exclusive feel."
  },
  {
   "slug": "sart",
@@ -416,7 +448,11 @@ window.EE_PROJECTS = [
     "h": 1799
    }
   ],
-  "desc": "Bacheloroppgave: papir laget av frukt- og grønnsaksrester, med egen identitet og emballasje."
+  "desc": "Bacheloroppgave: papir laget av frukt- og grønnsaksrester, med egen identitet og emballasje.",
+  "cat_en": "Material design",
+  "title_en": "SART",
+  "client_en": "Bachelor thesis",
+  "desc_en": "Bachelor thesis: paper made from fruit and vegetable waste, with its own identity and packaging."
  },
  {
   "slug": "pluggi",
@@ -445,7 +481,11 @@ window.EE_PROJECTS = [
     "h": 1080
    }
   ],
-  "desc": "Identitet og appdesign for Pluggi. Varm oransje, tydelig og vennlig."
+  "desc": "Identitet og appdesign for Pluggi. Varm oransje, tydelig og vennlig.",
+  "cat_en": "App and identity",
+  "title_en": "Pluggi",
+  "client_en": "Pluggi",
+  "desc_en": "Identity and app design for Pluggi. Warm orange, clear and friendly."
  },
  {
   "slug": "tyee",
@@ -474,7 +514,11 @@ window.EE_PROJECTS = [
     "h": 1414
    }
   ],
-  "desc": "Logo for Tyee Fishing Co., laget for å leve på klær, båter og YouTube."
+  "desc": "Logo for Tyee Fishing Co., laget for å leve på klær, båter og YouTube.",
+  "cat_en": "Logo",
+  "title_en": "Tyee Fishing Co.",
+  "client_en": "Tyee",
+  "desc_en": "Logo for Tyee Fishing Co., made to live on clothing, boats and YouTube."
  },
  {
   "slug": "ung-kreft",
@@ -503,7 +547,11 @@ window.EE_PROJECTS = [
     "h": 1333
    }
   ],
-  "desc": "Gaveeske og emballasje for Ung Kreft."
+  "desc": "Gaveeske og emballasje for Ung Kreft.",
+  "cat_en": "Packaging",
+  "title_en": "Ung Kreft",
+  "client_en": "Ung Kreft",
+  "desc_en": "Gift box and packaging for Ung Kreft."
  },
  {
   "slug": "fjordxplore",
@@ -532,7 +580,11 @@ window.EE_PROJECTS = [
     "h": 1080
    }
   ],
-  "desc": "Logo, profil og brosjyrer for et reiselivsselskap på Vestlandet."
+  "desc": "Logo, profil og brosjyrer for et reiselivsselskap på Vestlandet.",
+  "cat_en": "Visual identity",
+  "title_en": "FjordXplore",
+  "client_en": "FjordXplore",
+  "desc_en": "Logo, identity and brochures for a travel company in Western Norway."
  },
  {
   "slug": "kombucha-leather",
@@ -561,7 +613,11 @@ window.EE_PROJECTS = [
     "h": 1333
    }
   ],
-  "desc": "Materialstudie: vesker og former laget av kombuchalær."
+  "desc": "Materialstudie: vesker og former laget av kombuchalær.",
+  "cat_en": "Material design",
+  "title_en": "Kombucha Leather",
+  "client_en": "Material study",
+  "desc_en": "Material study: bags and shapes made from kombucha leather."
  },
  {
   "slug": "tilbring",
@@ -584,7 +640,11 @@ window.EE_PROJECTS = [
     "h": 1133
    }
   ],
-  "desc": "Nettside og visuell profil for Tilbring."
+  "desc": "Nettside og visuell profil for Tilbring.",
+  "cat_en": "Website",
+  "title_en": "Tilbring",
+  "client_en": "Tilbring",
+  "desc_en": "Website and visual identity for Tilbring."
  },
  {
   "slug": "aud-horpestad",
@@ -613,7 +673,11 @@ window.EE_PROJECTS = [
     "h": 1565
    }
   ],
-  "desc": "Personlig logo og visittkort for Aud Horpestad."
+  "desc": "Personlig logo og visittkort for Aud Horpestad.",
+  "cat_en": "Logo",
+  "title_en": "Aud Horpestad",
+  "client_en": "Aud Horpestad",
+  "desc_en": "Personal logo and business cards for Aud Horpestad."
  },
  {
   "slug": "bemba",
@@ -636,7 +700,11 @@ window.EE_PROJECTS = [
     "h": 1500
    }
   ],
-  "desc": "Logo med håndlaget, grafisk karakter."
+  "desc": "Logo med håndlaget, grafisk karakter.",
+  "cat_en": "Logo",
+  "title_en": "BEMBA",
+  "client_en": "BEMBA",
+  "desc_en": "A logo with a handmade, graphic character."
  },
  {
   "slug": "catharina",
@@ -659,7 +727,11 @@ window.EE_PROJECTS = [
     "h": 1333
    }
   ],
-  "desc": "Logo og mønster for Catharina Designs."
+  "desc": "Logo og mønster for Catharina Designs.",
+  "cat_en": "Logo",
+  "title_en": "Catharina Designs",
+  "client_en": "Catharina Designs",
+  "desc_en": "Logo and pattern for Catharina Designs."
  },
  {
   "slug": "knut-roertveit",
@@ -682,7 +754,11 @@ window.EE_PROJECTS = [
     "h": 1501
    }
   ],
-  "desc": "Platecover med kunstnerens egne malerier."
+  "desc": "Platecover med kunstnerens egne malerier.",
+  "cat_en": "Album cover",
+  "title_en": "Knut Roertveit",
+  "client_en": "Knut Roertveit",
+  "desc_en": "Album cover featuring the artist's own paintings."
  },
  {
   "slug": "diego-barretta",
@@ -705,7 +781,11 @@ window.EE_PROJECTS = [
     "h": 1492
    }
   ],
-  "desc": "Logo for en profesjonell syklist."
+  "desc": "Logo for en profesjonell syklist.",
+  "cat_en": "Logo",
+  "title_en": "Diego Barretta",
+  "client_en": "Diego Barretta",
+  "desc_en": "Logo for a professional cyclist."
  },
  {
   "slug": "havneterminalen",
@@ -776,7 +856,11 @@ window.EE_PROJECTS = [
     "h": 1318
    }
   ],
-  "desc": "Menneskene, kranene og cruiseskipene. Et år med bilder fra Sandnes Havneterminal."
+  "desc": "Menneskene, kranene og cruiseskipene. Et år med bilder fra Sandnes Havneterminal.",
+  "cat_en": "Environmental",
+  "title_en": "The harbour",
+  "client_en": "Sandnes Havneterminal",
+  "desc_en": "The people, the cranes and the cruise ships. A year of photographs from Sandnes Harbour Terminal."
  },
  {
   "slug": "norsea",
@@ -823,7 +907,11 @@ window.EE_PROJECTS = [
     "h": 2000
    }
   ],
-  "desc": "Miljøbilder fra basene i Tananger og omegn."
+  "desc": "Miljøbilder fra basene i Tananger og omegn.",
+  "cat_en": "Environmental",
+  "title_en": "NorSea",
+  "client_en": "NorSea",
+  "desc_en": "Environmental photography from the bases in Tananger and around."
  },
  {
   "slug": "objektsikring",
@@ -870,7 +958,11 @@ window.EE_PROJECTS = [
     "h": 1336
    }
   ],
-  "desc": "Fagfolk i arbeid, i ekte vær og ekte lys."
+  "desc": "Fagfolk i arbeid, i ekte vær og ekte lys.",
+  "cat_en": "Environmental",
+  "title_en": "Objektsikring",
+  "client_en": "Objektsikring",
+  "desc_en": "Professionals at work, in real weather and real light."
  },
  {
   "slug": "mossiges-minde",
@@ -923,7 +1015,11 @@ window.EE_PROJECTS = [
     "h": 1336
    }
   ],
-  "desc": "Hverdagen på Mossiges Minde: varme, mat og fellesskap."
+  "desc": "Hverdagen på Mossiges Minde: varme, mat og fellesskap.",
+  "cat_en": "Environmental",
+  "title_en": "Mossiges Minde",
+  "client_en": "Mossiges Minde",
+  "desc_en": "Everyday life at Mossiges Minde: warmth, food and community."
  },
  {
   "slug": "smiaa",
@@ -964,7 +1060,11 @@ window.EE_PROJECTS = [
     "h": 1280
    }
   ],
-  "desc": "Presisjon og produksjon, fotografert for SMIAA."
+  "desc": "Presisjon og produksjon, fotografert for SMIAA.",
+  "cat_en": "Environmental",
+  "title_en": "SMIAA",
+  "client_en": "SMIAA",
+  "desc_en": "Precision and production, photographed for SMIAA."
  },
  {
   "slug": "scantech",
@@ -1005,7 +1105,11 @@ window.EE_PROJECTS = [
     "h": 1336
    }
   ],
-  "desc": "Teknikk og mennesker for ScanTech."
+  "desc": "Teknikk og mennesker for ScanTech.",
+  "cat_en": "Environmental",
+  "title_en": "ScanTech",
+  "client_en": "ScanTech",
+  "desc_en": "Technology and people for ScanTech."
  },
  {
   "slug": "private-cruise",
@@ -1040,7 +1144,11 @@ window.EE_PROJECTS = [
     "h": 1920
    }
   ],
-  "desc": "En sommerdag på fjorden."
+  "desc": "En sommerdag på fjorden.",
+  "cat_en": "Environmental",
+  "title_en": "Private Cruise",
+  "client_en": "Private Cruise",
+  "desc_en": "A summer day on the fjord."
  },
  {
   "slug": "electrocompaniet",
@@ -1093,7 +1201,11 @@ window.EE_PROJECTS = [
     "h": 1336
    }
   ],
-  "desc": "Produktbilder av norsk hi-fi: detaljer, studio og miljø."
+  "desc": "Produktbilder av norsk hi-fi: detaljer, studio og miljø.",
+  "cat_en": "Product",
+  "title_en": "Electrocompaniet",
+  "client_en": "Electrocompaniet",
+  "desc_en": "Product photography of Norwegian hi-fi: details, studio and setting."
  },
  {
   "slug": "bondenes",
@@ -1146,7 +1258,11 @@ window.EE_PROJECTS = [
     "h": 2000
    }
   ],
-  "desc": "Sesongkampanje for Bøndenes Innkjøpslag, fotografert midt i blomstringen."
+  "desc": "Sesongkampanje for Bøndenes Innkjøpslag, fotografert midt i blomstringen.",
+  "cat_en": "Product",
+  "title_en": "Bøndenes Innkjøpslag",
+  "client_en": "Bøndenes Innkjøpslag",
+  "desc_en": "Seasonal campaign for Bøndenes Innkjøpslag, photographed in full bloom."
  },
  {
   "slug": "woodling",
@@ -1199,7 +1315,11 @@ window.EE_PROJECTS = [
     "h": 1920
    }
   ],
-  "desc": "Kolleksjonsbilder for Woodling, fra strand til showroom."
+  "desc": "Kolleksjonsbilder for Woodling, fra strand til showroom.",
+  "cat_en": "Product",
+  "title_en": "Woodling",
+  "client_en": "Woodling",
+  "desc_en": "Collection imagery for Woodling, from beach to showroom."
  },
  {
   "slug": "enigma",
@@ -1234,7 +1354,11 @@ window.EE_PROJECTS = [
     "h": 2000
    }
   ],
-  "desc": "Mat- og miljøbilder for restaurant Enigma."
+  "desc": "Mat- og miljøbilder for restaurant Enigma.",
+  "cat_en": "Product",
+  "title_en": "Enigma",
+  "client_en": "Enigma",
+  "desc_en": "Food and setting photography for restaurant Enigma."
  },
  {
   "slug": "surfd",
@@ -1269,7 +1393,11 @@ window.EE_PROJECTS = [
     "h": 1920
    }
   ],
-  "desc": "Produkt og mennesker i surfebutikken."
+  "desc": "Produkt og mennesker i surfebutikken.",
+  "cat_en": "Product",
+  "title_en": "Surfd",
+  "client_en": "Surfd",
+  "desc_en": "Product and people in the surf shop."
  },
  {
   "slug": "accenture-ons",
@@ -1322,7 +1450,11 @@ window.EE_PROJECTS = [
     "h": 1336
    }
   ],
-  "desc": "Accentures paviljong på ONS: samtaler, scene og stemning."
+  "desc": "Accentures paviljong på ONS: samtaler, scene og stemning.",
+  "cat_en": "Event",
+  "title_en": "Accenture at ONS",
+  "client_en": "Accenture",
+  "desc_en": "Accenture's pavilion at ONS: conversations, stage and atmosphere."
  },
  {
   "slug": "ons-afterparty",
@@ -1369,7 +1501,11 @@ window.EE_PROJECTS = [
     "h": 1336
    }
   ],
-  "desc": "Afterparty for Xait og Neodrill under ONS."
+  "desc": "Afterparty for Xait og Neodrill under ONS.",
+  "cat_en": "Event",
+  "title_en": "ONS Afterparty",
+  "client_en": "Xait and Neodrill",
+  "desc_en": "Afterparty for Xait and Neodrill during ONS."
  },
  {
   "slug": "serviceforum",
@@ -1410,7 +1546,11 @@ window.EE_PROJECTS = [
     "h": 1336
    }
   ],
-  "desc": "Konferansedokumentasjon for ServiceForum."
+  "desc": "Konferansedokumentasjon for ServiceForum.",
+  "cat_en": "Event",
+  "title_en": "ServiceForum",
+  "client_en": "ServiceForum",
+  "desc_en": "Conference coverage for ServiceForum."
  },
  {
   "slug": "otd25",
@@ -1451,7 +1591,11 @@ window.EE_PROJECTS = [
     "h": 1336
    }
   ],
-  "desc": "Stands og mennesker på Offshore Technology Days 2025."
+  "desc": "Stands og mennesker på Offshore Technology Days 2025.",
+  "cat_en": "Event",
+  "title_en": "OTD 2025",
+  "client_en": "Offshore Technology Days",
+  "desc_en": "Stands and people at Offshore Technology Days 2025."
  },
  {
   "slug": "fomo-interior",
@@ -1492,7 +1636,11 @@ window.EE_PROJECTS = [
     "h": 2000
    }
   ],
-  "desc": "Interiørbilder av FOMO Works sine lokaler."
+  "desc": "Interiørbilder av FOMO Works sine lokaler.",
+  "cat_en": "Interior",
+  "title_en": "FOMO",
+  "client_en": "FOMO Works",
+  "desc_en": "Interior photography of the FOMO Works premises."
  },
  {
   "slug": "kompaniet",
@@ -1533,7 +1681,11 @@ window.EE_PROJECTS = [
     "h": 2000
    }
   ],
-  "desc": "Interiør og atmosfære hos Kompaniet."
+  "desc": "Interiør og atmosfære hos Kompaniet.",
+  "cat_en": "Interior",
+  "title_en": "Kompaniet",
+  "client_en": "Kompaniet",
+  "desc_en": "Interior and atmosphere at Kompaniet."
  },
  {
   "slug": "portretter",
@@ -1598,7 +1750,11 @@ window.EE_PROJECTS = [
     "h": 2000
    }
   ],
-  "desc": "Ansatt- og profilportretter med personlighet, profesjonalitet og tillit."
+  "desc": "Ansatt- og profilportretter med personlighet, profesjonalitet og tillit.",
+  "cat_en": "Portrait",
+  "title_en": "Portraits",
+  "client_en": "Equinor, Inspirit365 and others",
+  "desc_en": "Staff and profile portraits with personality, professionalism and trust."
  },
  {
   "slug": "benedicte-isak",
@@ -1651,7 +1807,11 @@ window.EE_PROJECTS = [
     "h": 2000
    }
   ],
-  "desc": "Bryllup blant kirsebærblomster."
+  "desc": "Bryllup blant kirsebærblomster.",
+  "cat_en": "Wedding",
+  "title_en": "Benedicte and Isak",
+  "client_en": "Wedding",
+  "desc_en": "A wedding among the cherry blossoms."
  },
  {
   "slug": "max-eileen",
@@ -1704,7 +1864,11 @@ window.EE_PROJECTS = [
     "h": 2000
    }
   ],
-  "desc": "Bryllup i en hvit trekirke, fortalt med ekte øyeblikk."
+  "desc": "Bryllup i en hvit trekirke, fortalt med ekte øyeblikk.",
+  "cat_en": "Wedding",
+  "title_en": "Max and Eileen",
+  "client_en": "Wedding",
+  "desc_en": "A wedding in a white wooden church, told through real moments."
  },
  {
   "slug": "par",
@@ -1733,6 +1897,10 @@ window.EE_PROJECTS = [
     "h": 1379
    }
   ],
-  "desc": "Parportretter i lys og silhuett."
+  "desc": "Parportretter i lys og silhuett.",
+  "cat_en": "Portrait",
+  "title_en": "Couples",
+  "client_en": "Couple portrait",
+  "desc_en": "Couple portraits in light and silhouette."
  }
 ];

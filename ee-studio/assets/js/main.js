@@ -15,7 +15,12 @@
   const bySlug = (s) => P.find((p) => p.slug === s);
   const esc = (s) => String(s).replace(/[&<>"']/g, (c) => ({ "&": "&amp;", "<": "&lt;", ">": "&gt;", '"': "&quot;", "'": "&#39;" }[c]));
   const pad = (n) => String(n).padStart(2, "0");
-  const worldName = (w) => (w === "design" ? "Design" : "Foto");
+  const EN = doc.lang === "en";
+  const BASE = doc.dataset.base || "";
+  const T = (no, en) => (EN ? en : no);
+  const L = (p, k) => (EN && p[k + "_en"]) || p[k];
+  const U = (src) => BASE + src;
+  const worldName = (w) => (w === "design" ? "Design" : T("Foto", "Photo"));
   if (G) gsap.registerPlugin(ScrollTrigger);
 
   /* Smooth scroll */
@@ -58,11 +63,11 @@
   const menu = $("#menu");
   function closeMenu() {
     if (!body.classList.contains("menu-open")) return;
-    body.classList.remove("menu-open"); burger.setAttribute("aria-expanded", "false"); burger.textContent = "Meny"; menu.setAttribute("aria-hidden", "true"); lenis && lenis.start();
+    body.classList.remove("menu-open"); burger.setAttribute("aria-expanded", "false"); burger.setAttribute("aria-label", T("Åpne meny", "Open menu")); menu.setAttribute("aria-hidden", "true"); lenis && lenis.start();
   }
   burger.addEventListener("click", () => {
     if (body.classList.contains("menu-open")) return closeMenu();
-    body.classList.add("menu-open"); burger.setAttribute("aria-expanded", "true"); burger.textContent = "Lukk"; menu.setAttribute("aria-hidden", "false"); lenis && lenis.stop();
+    body.classList.add("menu-open"); burger.setAttribute("aria-expanded", "true"); burger.setAttribute("aria-label", T("Lukk meny", "Close menu")); menu.setAttribute("aria-hidden", "false"); lenis && lenis.stop();
   });
   addEventListener("keydown", (e) => { if (e.key === "Escape") closeMenu(); });
 
@@ -90,9 +95,9 @@
   $$("[data-index]").forEach((list) => {
     const slugs = list.dataset.index ? list.dataset.index.split(",") : P.map((p) => p.slug);
     list.innerHTML = slugs.map(bySlug).filter(Boolean).map((p) => {
-      const th = p.images.slice(1, 3).map((im) => `<span class="ix__thumb" style="--ar:${(im.w / im.h).toFixed(3)}"><img src="${im.s}" alt="" loading="lazy" decoding="async"></span>`).join("");
-      return `<a class="ix" href="${href(p)}" data-world="${p.world}" data-cat="${esc(p.cat)}" data-cover="${p.images[0].s}" data-reveal>
-        <span class="ix__meta">${worldName(p.world)}<br>${esc(p.cat)}</span>${esc(p.title)}${th}</a>`;
+      const th = p.images.slice(1, 3).map((im) => `<span class="ix__thumb" style="--ar:${(im.w / im.h).toFixed(3)}"><img src="${U(im.s)}" alt="" loading="lazy" decoding="async"></span>`).join("");
+      return `<a class="ix" href="${href(p)}" data-world="${p.world}" data-cat="${esc(p.cat)}" data-cover="${U(p.images[0].s)}" data-reveal>
+        <span class="ix__meta">${worldName(p.world)}<br>${esc(L(p, "cat"))}</span>${esc(L(p, "title"))}${th}</a>`;
     }).join("");
   });
 
@@ -101,9 +106,9 @@
     const w = grid.dataset.grid;
     grid.innerHTML = P.filter((p) => w === "all" || p.world === w).map((p) => {
       const im = p.images[0];
-      return `<a class="card" href="${href(p)}" data-cat="${esc(p.cat)}" data-world="${p.world}" data-cursor="Se">
-        <div class="card__img" data-clip><img src="${im.src}" width="${im.w}" height="${im.h}" alt="${esc(p.title)}" loading="lazy" decoding="async"></div>
-        <div class="card__row"><b>${esc(p.title)}</b><span class="muted">${w === "all" ? worldName(p.world) + ", " : ""}${esc(p.cat)}</span></div></a>`;
+      return `<a class="card" href="${href(p)}" data-cat="${esc(L(p, "cat"))}" data-world="${p.world}" data-cursor="${T("Se", "View")}">
+        <div class="card__img" data-clip><img src="${U(im.src)}" width="${im.w}" height="${im.h}" alt="${esc(L(p, "title"))}" loading="lazy" decoding="async"></div>
+        <div class="card__row"><b>${esc(L(p, "title"))}</b><span class="muted">${w === "all" ? worldName(p.world) + ", " : ""}${esc(L(p, "cat"))}</span></div></a>`;
     }).join("");
   });
 
@@ -111,9 +116,9 @@
   $$("[data-albums]").forEach((track) => {
     track.innerHTML = P.filter((p) => p.world === "foto").map((p, i) => {
       const im = p.images[0];
-      return `<a class="album" href="${href(p)}" data-i="${i}" data-name="${esc(p.title)}" data-cursor="Åpne">
-        <div class="album__img"><img src="${im.s}" alt="${esc(p.title)}" loading="lazy" decoding="async"></div>
-        <div class="album__cap"><span>${esc(p.cat)}</span><span>${pad(p.images.length)} bilder</span></div></a>`;
+      return `<a class="album" href="${href(p)}" data-i="${i}" data-name="${esc(L(p, "title"))}" data-cursor="${T("Åpne", "Open")}">
+        <div class="album__img"><img src="${U(im.s)}" alt="${esc(L(p, "title"))}" loading="lazy" decoding="async"></div>
+        <div class="album__cap"><span>${esc(L(p, "cat"))}</span><span>${pad(p.images.length)} ${T("bilder", "images")}</span></div></a>`;
     }).join("");
   });
 
@@ -122,10 +127,10 @@
     const list = track.dataset.hgalList.split(",").map(bySlug).filter(Boolean);
     track.innerHTML = list.map((p, i) => {
       const im = p.images[0];
-      return `<a class="hg" href="${href(p)}" data-cursor="Se">
-        <div class="hg__img" style="--ar:${(im.w / im.h).toFixed(3)}"><img src="${im.src}" alt="${esc(p.title)}" loading="lazy" decoding="async"></div>
-        <div class="hg__cap"><span class="hg__n">${pad(i + 1)}</span><span class="t-md">${esc(p.title)}</span><span class="small">${worldName(p.world)}, ${esc(p.cat)}</span></div></a>`;
-    }).join("") + `<a class="hg hg--end" href="arbeid.html"><span class="link t-md">Alt arbeid <span class="arrow" aria-hidden="true"></span></span></a>`;
+      return `<a class="hg" href="${href(p)}" data-cursor="${T("Se", "View")}">
+        <div class="hg__img" style="--ar:${(im.w / im.h).toFixed(3)}"><img src="${U(im.src)}" alt="${esc(L(p, "title"))}" loading="lazy" decoding="async"></div>
+        <div class="hg__cap"><span class="hg__n">${pad(i + 1)}</span><span class="t-md">${esc(L(p, "title"))}</span><span class="small">${worldName(p.world)}, ${esc(L(p, "cat"))}</span></div></a>`;
+    }).join("") + `<a class="hg hg--end" href="arbeid.html"><span class="link link--accent t-md">${T("Alt arbeid", "All work")} <span class="arrow" aria-hidden="true"></span></span></a>`;
     const tot = $("[data-hgal-total]"); if (tot) tot.textContent = pad(list.length);
   });
 
@@ -136,14 +141,14 @@
     const items = () => $$(".ix, .card", target);
     const values = Array.from(new Set(items().map((el) => el.dataset[key])));
     if (bar.dataset.auto !== undefined) {
-      bar.innerHTML = `<button type="button" data-v="" aria-pressed="true">Alle</button>` + values.map((v) => `<button type="button" data-v="${esc(v)}" aria-pressed="false">${esc(v)}</button>`).join("");
+      bar.innerHTML = `<button type="button" data-v="" aria-pressed="true">${T("Alle", "All")}</button>` + values.map((v) => `<button type="button" data-v="${esc(v)}" aria-pressed="false">${esc(v)}</button>`).join("");
     }
     const count = $("[data-count]");
     const apply = (v) => {
       $$("button", bar).forEach((b) => b.setAttribute("aria-pressed", String(b.dataset.v === v)));
       let n = 0;
       items().forEach((el) => { const ok = !v || el.dataset[key] === v; el.hidden = !ok; if (ok) n++; });
-      if (count) count.textContent = `${n} prosjekter`;
+      if (count) count.textContent = `${n} ${T("prosjekter", "projects")}`;
       G && ScrollTrigger.refresh();
     };
     bar.addEventListener("click", (e) => { const b = e.target.closest("button"); if (b) apply(b.dataset.v); });
@@ -169,15 +174,16 @@
     const p = bySlug(params.get("p")) || P[0];
     const list = P.filter((q) => q.world === p.world);
     const next = list[(list.indexOf(p) + 1) % list.length];
-    document.title = `${p.title} | EE Studio`;
+    document.title = `${L(p, "title")} | EE Studio`;
     body.dataset.theme = p.world === "foto" ? "dark" : "light";
     const set = (k, v) => $$(`[data-ap-${k}]`).forEach((el) => { el.innerHTML = v; });
-    set("title", esc(p.title)); set("desc", esc(p.desc)); set("client", esc(p.client)); set("cat", esc(p.cat)); set("year", esc(p.year));
+    set("title", esc(L(p, "title"))); set("desc", esc(L(p, "desc"))); set("client", esc(L(p, "client"))); set("cat", esc(L(p, "cat"))); set("year", esc(p.year));
+    $$("[data-ap-cta]").forEach((a) => { a.href = `kontakt.html?tema=${p.world}`; });
     set("world", worldName(p.world)); set("total", pad(p.images.length));
     $$("[data-ap-back]").forEach((a) => { a.href = p.world === "foto" ? "foto.html" : "design.html"; a.innerHTML = `${worldName(p.world)}`; });
-    $("[data-ap-col]").innerHTML = p.images.map((im, i) => `<figure data-n="${i}"><img src="${im.src}" width="${im.w}" height="${im.h}" alt="${esc(p.title)}, bilde ${i + 1}" ${i ? 'loading="lazy"' : 'fetchpriority="high"'} decoding="async"></figure>`).join("");
-    $("[data-ap-side]").innerHTML = p.images.map((im, i) => `<button type="button" data-n="${i}" aria-label="Bilde ${i + 1}"><img src="${im.s}" alt=""></button>`).join("");
-    const nx = $("[data-ap-next]"); nx.href = href(next); $("[data-ap-next-title]").textContent = next.title;
+    $("[data-ap-col]").innerHTML = p.images.map((im, i) => `<figure data-n="${i}"><img src="${U(im.src)}" width="${im.w}" height="${im.h}" alt="${esc(L(p, "title"))}, ${T("bilde", "image")} ${i + 1}" ${i ? 'loading="lazy"' : 'fetchpriority="high"'} decoding="async"></figure>`).join("");
+    $("[data-ap-side]").innerHTML = p.images.map((im, i) => `<button type="button" data-n="${i}" aria-label="${T("Bilde", "Image")} ${i + 1}"><img src="${U(im.s)}" alt=""></button>`).join("");
+    const nx = $("[data-ap-next]"); nx.href = href(next); $("[data-ap-next-title]").textContent = L(next, "title");
     const cur = $("[data-ap-cur]");
     const figs = $$("[data-ap-col] figure");
     const thumbs = $$("[data-ap-side] button");
@@ -245,9 +251,64 @@
 
   /* Form (prototype: no backend yet) */
   $$("form[data-form]").forEach((f) => {
-    const t = params.get("tema"); if (t) { const r = $(`input[value='${t}']`, f); if (r) r.checked = true; }
-    f.addEventListener("submit", (e) => { e.preventDefault(); if (!f.checkValidity()) { f.reportValidity(); return; } f.classList.add("is-sent"); });
+    const t = params.get("tema"); if (t) { const r = $(`input[name='tema'][value='${t}']`, f); if (r) r.checked = true; }
+    // Inline inputs grow with their content
+    $$("[data-grow]", f).forEach((inp) => {
+      const fit = () => { if (matchMedia("(max-width: 900px)").matches) { inp.style.width = ""; return; } const n = Math.max(inp.value.length, inp.placeholder.length * 0.92, 6); inp.style.width = `${n + 1}ch`; };
+      inp.addEventListener("input", fit); fit();
+    });
+    f.addEventListener("submit", (e) => {
+      e.preventDefault();
+      if (!f.checkValidity()) { f.reportValidity(); return; }
+      const nm = (f.elements.navn && f.elements.navn.value.trim().split(" ")[0]) || "";
+      const out = $("[data-thanks-name]", f); if (out && nm) out.textContent = `, ${nm}`;
+      f.classList.add("is-sent");
+      const ok = $(".madlib__ok, .form__ok", f); ok && ok.focus();
+    });
   });
+
+  /* Back button: real history when we came from this site, otherwise the parent page */
+  $$("[data-back]").forEach((a) => a.addEventListener("click", (e) => {
+    let same = false;
+    try { same = document.referrer && new URL(document.referrer).origin === location.origin; } catch (err) { same = false; }
+    if (same && history.length > 1) { e.preventDefault(); e.stopPropagation(); body.classList.add("is-leaving"); setTimeout(() => history.back(), reduced ? 0 : 380); }
+  }, true));
+
+  /* Language switch keeps the current query (project, filters) */
+  $$("[data-lang]").forEach((a) => { if (location.search) a.href = a.getAttribute("href") + location.search; });
+
+  /* Price tabs */
+  $$("[data-tabs]").forEach((wrap) => {
+    const tabs = $$("[data-tab]", wrap);
+    const select = (v) => {
+      tabs.forEach((t) => t.setAttribute("aria-selected", String(t.dataset.tab === v)));
+      $$("[data-panel]", wrap).forEach((p) => { p.hidden = p.dataset.panel !== v; });
+      const vis = $(`[data-panel='${v}']`, wrap);
+      if (vis && G && !reduced) gsap.fromTo($$(".pkg", vis), { y: 40, opacity: 0 }, { y: 0, opacity: 1, duration: .8, stagger: .08, ease: "expo.out", clearProps: "transform,opacity" });
+      G && ScrollTrigger.refresh();
+    };
+    tabs.forEach((t) => t.addEventListener("click", () => select(t.dataset.tab)));
+    const spor = params.get("spor"), kunde = params.get("kunde");
+    select(spor === "design" ? "design" : kunde === "privat" ? "foto-privat" : "foto-bedrift");
+  });
+
+  /* Drag to scroll (reviews) */
+  $$("[data-drag]").forEach((el) => {
+    let down = false, sx = 0, sl = 0, moved = false;
+    el.addEventListener("pointerdown", (e) => { if (e.pointerType !== "mouse") return; down = true; moved = false; sx = e.clientX; sl = el.scrollLeft; el.classList.add("is-drag"); });
+    addEventListener("pointermove", (e) => { if (!down) return; const dx = e.clientX - sx; if (Math.abs(dx) > 3) moved = true; el.scrollLeft = sl - dx; });
+    addEventListener("pointerup", () => { down = false; el.classList.remove("is-drag"); });
+    el.addEventListener("click", (e) => { if (moved) e.preventDefault(); }, true);
+  });
+
+  /* Magnetic CTA buttons */
+  if (fine && !reduced) $$("[data-magnet]").forEach((b) => {
+    b.addEventListener("mousemove", (e) => { const r = b.getBoundingClientRect(); const x = e.clientX - r.left - r.width / 2, y = e.clientY - r.top - r.height / 2; b.style.transform = `translate(${x * 0.25}px, ${y * 0.25}px)`; });
+    b.addEventListener("mouseleave", () => { b.style.transform = ""; });
+  });
+
+  /* Year */
+  $$("[data-year]").forEach((el) => { el.textContent = new Date().getFullYear(); });
 
   /* ---------------------------------------------------------
      Reveal + scroll choreography
